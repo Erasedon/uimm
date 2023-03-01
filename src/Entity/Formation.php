@@ -68,6 +68,9 @@ class Formation
     #[ORM\ManyToMany(targetEntity: Lieu::class, inversedBy: 'formations')]
     private Collection $situer;
 
+    #[ORM\Column]
+    private ?bool $actif = null;
+
     public function __construct()
     {
         $this->posseder_condition = new ArrayCollection();
@@ -387,6 +390,18 @@ class Formation
     public function removeSituer(Lieu $situer): self
     {
         $this->situer->removeElement($situer);
+
+        return $this;
+    }
+
+    public function isActif(): ?bool
+    {
+        return $this->actif;
+    }
+
+    public function setActif(bool $actif): self
+    {
+        $this->actif = $actif;
 
         return $this;
     }
