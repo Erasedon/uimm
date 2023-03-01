@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.bandeau_acceuil{
+    width: 100%;
+    height: calc(100vh - 80px);
+    border-top: 1px gray solid;
+    background-color: gray;
+}
 
-
-body {
-    background-color: lightgray;
+.titre_et_btn{
+    width: 30%;
+    height: calc(100vh - 80px);
+    border: red solid 1px;
 }

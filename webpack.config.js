@@ -7,9 +7,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
-Encore
-    // ...
-    enablePostCssLoader()
+
 
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
@@ -18,16 +16,9 @@ Encore
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
 // webpack.config.js
-const path = require('path');
 
-  Encore
-      // ...
-    enablePostCssLoader((options) => {
-        options.postcssOptions = {
-             // the directory where the postcss.config.js file is stored
-            config: path.resolve(__dirname, 'sub-dir', 'custom.config.js'),
-        };
-    })
+
+
   
     /*
      * ENTRY CONFIG
@@ -46,6 +37,8 @@ const path = require('path');
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
+
+    .enablePostCssLoader()
 
     /*
      * FEATURE CONFIG
