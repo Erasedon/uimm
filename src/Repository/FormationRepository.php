@@ -39,28 +39,55 @@ class FormationRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Formation[] Returns an array of Formation objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('f.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function filterFormations($domaine, $niveau, $type)
+    {
+        $query = $this->createQueryBuilder('f');
 
-//    public function findOneBySomeField($value): ?Formation
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        if ($domaine) {
+            $query
+                ->leftJoin('f.appartenir_domaine', 'd')
+                ->andWhere('d.id = :id')
+                ->setParameter('id', $domaine);
+        }
+
+        if ($niveau) {
+            $query
+                ->andWhere('f.niveau = :niveau')
+                ->setParameter('niveau', $niveau);
+        }
+
+        if ($type) {
+            $query
+                ->leftJoin('f.effectuer_type_formation', 'tf')
+                ->andWhere('tf.id = :id')
+                ->setParameter('id', $type);
+        }
+
+        return $query->getQuery()->getResult();
+    }
+
+    //    /**
+    //     * @return Formation[] Returns an array of Formation objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('f')
+    //            ->andWhere('f.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('f.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
+
+    //    public function findOneBySomeField($value): ?Formation
+    //    {
+    //        return $this->createQueryBuilder('f')
+    //            ->andWhere('f.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

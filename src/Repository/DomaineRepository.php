@@ -39,6 +39,15 @@ class DomaineRepository extends ServiceEntityRepository
         }
     }
 
+    public function filtrerDomaine($valeurDomaine)
+    {
+    return $this->createQueryBuilder('d')
+        ->where('d.id = :valeurDomaine')
+        ->setParameter('valeurDomaine', $valeurDomaine)
+        ->getQuery()
+        ->getOneOrNullResult();
+    }
+
 //    /**
 //     * @return Domaine[] Returns an array of Domaine objects
 //     */
