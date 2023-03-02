@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FraisScolarite{% endblock %}
+
+{% block body %}
+    <h1>FraisScolarite</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ frais_scolarite.id }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ frais_scolarite.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_frais_scolarite_index') }}">back to list</a>
+
+    <a href="{{ path('app_frais_scolarite_edit', {'id': frais_scolarite.id}) }}">edit</a>
+
+    {{ include('frais_scolarite/_delete_form.html.twig') }}
+{% endblock %}
