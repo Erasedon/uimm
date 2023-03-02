@@ -48,15 +48,62 @@
                 <td>{{ formation.niveau.titre }}</td>
             </tr>
             <tr>
+                <th>code de formation</th>
+                <td>
+                        {% for code in formation.identifierFormation %}
+                        {{ code.code }}
+                    {% endfor %}
+                    </td>
+            </tr>
+            <tr>
+                <th>Frais Scolarite</th>
+                <td>
+                        {% for frais in formation.remunerer %}
+                        {{ frais.description }}
+                    {% endfor %}
+                    </td>
+            </tr>
+            <tr>
+                <th>Lieux</th>
+                <td>
+                         {% for lieux in formation.situer %}
+                        {{ lieux.description }}
+                    {% endfor %}
+                    </td>
+            </tr>
+            <tr>
+                <th>Metier viser</th>
+                <td>
+                         {% for metier in formation.viserMetier %}
+                        {{ metier.titre }}
+                    {% endfor %}
+                    </td>
+            </tr>
+            <tr>
+                <th>Type de Formation</th>
+                <td>
+                         {% for type in formation.effectuerTypeFormation %}
+                        {{ type.titre }}
+                    {% endfor %}
+                    </td>
+            </tr>
+            <tr>
+                <th>Domaines</th>
+                <td>  {% for domaine in formation.domaines %}
+                        {{ domaine.titre }}
+                    {% endfor %}</td>
+            </tr>
+              
+            <tr>
                 <th>Actif</th>
                 <td>{{ formation.actif ? 'Yes' : 'No' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_formation_index') }}">back to list</a>
+    <a href="{{ path('app_formation_index') }}">Retour a la liste</a>
 
-    <a href="{{ path('app_formation_edit', {'id': formation.id}) }}">edit</a>
+    <a href="{{ path('app_formation_edit', {'id': formation.id}) }}">Modifier</a>
 
     {{ include('formation/_delete_form.html.twig') }}
 {% endblock %}

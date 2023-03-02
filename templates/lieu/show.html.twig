@@ -15,6 +15,12 @@
                 <th>Description</th>
                 <td>{{ lieu.description }}</td>
             </tr>
+            <tr>
+                <th>Formation</th>
+                <td> {% for lieux in lieu.formations %}
+                        {{ lieux.titre }}
+                    {% endfor %}</td>
+            </tr>
         </tbody>
     </table>
 

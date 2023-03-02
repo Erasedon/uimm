@@ -15,6 +15,12 @@
                 <th>Code</th>
                 <td>{{ code_formation.code }}</td>
             </tr>
+            <tr>
+                <th>Code</th>
+                <td> {% for formation in code_formation.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}</td>
+            </tr>
         </tbody>
     </table>
 

@@ -3,8 +3,10 @@
 namespace App\Form;
 
 use App\Entity\TypeFormation;
+use App\Entity\Formation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;         
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TypeFormationType extends AbstractType
@@ -13,7 +15,13 @@ class TypeFormationType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('formations')
+            ->add('formations', EntityType::class, [
+                    'class' => Formation::class,
+                    'choice_label' => 'titre',
+                    'expanded' => true,
+                    'multiple' => true,
+                    'by_reference' => false
+            ])
         ;
     }
 

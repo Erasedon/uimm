@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Description</th>
+                <th>formation</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,6 +19,11 @@
             <tr>
                 <td>{{ lieu.id }}</td>
                 <td>{{ lieu.description }}</td>
+                <td>
+                {% for lieux in lieu.formations %}
+                        {{ lieux.titre }}
+                    {% endfor %}
+                </td>
                 <td>
                     <a href="{{ path('app_lieu_show', {'id': lieu.id}) }}">show</a>
                     <a href="{{ path('app_lieu_edit', {'id': lieu.id}) }}">edit</a>

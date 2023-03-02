@@ -20,6 +20,7 @@
                 <td>{{ stat.id }}</td>
                 <td>{{ stat.annee }}</td>
                 <td>{{ stat.taux }}</td>
+                 <td>{{ stat.obtenirFormation.titre }}</td>  
                 <td>
                     <a href="{{ path('app_stats_show', {'id': stat.id}) }}">show</a>
                     <a href="{{ path('app_stats_edit', {'id': stat.id}) }}">edit</a>

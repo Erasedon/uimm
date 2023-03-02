@@ -12,6 +12,7 @@
                 <th>Titre</th>
                 <th>Description</th>
                 <th>Url</th>
+                <th>Formation</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +23,12 @@
                 <td>{{ metier_vise.titre }}</td>
                 <td>{{ metier_vise.description }}</td>
                 <td>{{ metier_vise.url }}</td>
+                 <td>
+                  {% for formation in metier_vise.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}
+
+                </td>
                 <td>
                     <a href="{{ path('app_metier_vise_show', {'id': metier_vise.id}) }}">show</a>
                     <a href="{{ path('app_metier_vise_edit', {'id': metier_vise.id}) }}">edit</a>

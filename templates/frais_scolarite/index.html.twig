@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Description</th>
+                <th>Formation</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,6 +19,12 @@
             <tr>
                 <td>{{ frais_scolarite.id }}</td>
                 <td>{{ frais_scolarite.description }}</td>
+                <td>
+                  {% for formation in frais_scolarite.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}
+
+                </td>
                 <td>
                     <a href="{{ path('app_frais_scolarite_show', {'id': frais_scolarite.id}) }}">show</a>
                     <a href="{{ path('app_frais_scolarite_edit', {'id': frais_scolarite.id}) }}">edit</a>

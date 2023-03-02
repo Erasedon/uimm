@@ -23,6 +23,12 @@
                 <th>Url</th>
                 <td>{{ metier_vise.url }}</td>
             </tr>
+             <tr>
+                <th>Formation</th>
+                <td> {% for formation in metier_vise.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}</td>
+            </tr>
         </tbody>
     </table>
 

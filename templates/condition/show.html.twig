@@ -15,6 +15,12 @@
                 <th>Description</th>
                 <td>{{ condition.description }}</td>
             </tr>
+            <tr>
+                <th>Formation</th>
+                <td>      {% for formation in condition.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}</td>
+            </tr>
         </tbody>
     </table>
 

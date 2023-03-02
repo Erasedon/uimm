@@ -18,11 +18,12 @@ class DomaineType extends AbstractType
             ->add('titre')
             ->add('image')
             // ->add('formations', CollectionType::class,['class'=>Formation::class,'entry_type' => TextType::class, 'choice_label'=>'titre'])
-            ->add('formations', EntityType::class, [
+                  ->add('formations', EntityType::class, [
                 'class' => Formation::class,
                 'choice_label' => 'titre',
                 'expanded' => true,
                 'multiple' => true,
+                'by_reference' => false
             ])
         ;
     }

@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Lieu;
+use App\Entity\Formation;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;         
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +15,13 @@ class LieuType extends AbstractType
     {
         $builder
             ->add('description')
-            ->add('formations')
+                  ->add('formations', EntityType::class, [
+                'class' => Formation::class,
+                'choice_label' => 'titre',
+                'expanded' => true,
+                'multiple' => true,
+                'by_reference' => false
+            ])
         ;
     }
 

@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Description</th>
+                <th>Formation</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,6 +19,12 @@
             <tr>
                 <td>{{ condition.id }}</td>
                 <td>{{ condition.description }}</td>
+                <td>
+                    {% for formation in condition.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}
+                </td>
+            
                 <td>
                     <a href="{{ path('app_condition_show', {'id': condition.id}) }}">show</a>
                     <a href="{{ path('app_condition_edit', {'id': condition.id}) }}">edit</a>
