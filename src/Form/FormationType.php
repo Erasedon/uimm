@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Niveau;
+use App\Entity\Domaine;
 use App\Entity\Formation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -26,7 +27,13 @@ class FormationType extends AbstractType
             ->add('posseder_condition')
             ->add('remunerer')
             ->add('effectuer_type_formation')
-            ->add('appartenir_domaine')
+            ->add('domaines', EntityType::class, [
+                'class' => Domaine::class,
+                'choice_label' => 'titre',
+                'expanded' => true,
+                'multiple' => true,
+                'by_reference' => false
+            ])
             ->add('niveau',EntityType::class,['class'=>Niveau::class,'choice_label'=>'titre'])
             ->add('viser_metier')
             ->add('identifier_formation')

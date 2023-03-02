@@ -52,9 +52,6 @@ class Formation
     #[ORM\OneToMany(mappedBy: 'obtenir_formation', targetEntity: Stats::class)]
     private Collection $stats;
 
-    #[ORM\ManyToMany(targetEntity: Domaine::class, inversedBy: 'formations')]
-    private Collection $appartenir_domaine;
-
     #[ORM\ManyToOne(inversedBy: 'formations')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Niveau $niveau = null;
@@ -71,16 +68,19 @@ class Formation
     #[ORM\Column]
     private ?bool $actif = null;
 
+    #[ORM\ManyToMany(targetEntity: Domaine::class, mappedBy: 'formations')]
+    private Collection $domaines;
+
     public function __construct()
     {
         $this->posseder_condition = new ArrayCollection();
         $this->remunerer = new ArrayCollection();
         $this->effectuer_type_formation = new ArrayCollection();
         $this->stats = new ArrayCollection();
-        $this->appartenir_domaine = new ArrayCollection();
         $this->viser_metier = new ArrayCollection();
         $this->identifier_formation = new ArrayCollection();
         $this->situer = new ArrayCollection();
+        $this->domaines = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -286,30 +286,6 @@ class Formation
         return $this;
     }
 
-    /**
-     * @return Collection<int, Domaine>
-     */
-    public function getAppartenirDomaine(): Collection
-    {
-        return $this->appartenir_domaine;
-    }
-
-    public function addAppartenirDomaine(Domaine $appartenirDomaine): self
-    {
-        if (!$this->appartenir_domaine->contains($appartenirDomaine)) {
-            $this->appartenir_domaine->add($appartenirDomaine);
-        }
-
-        return $this;
-    }
-
-    public function removeAppartenirDomaine(Domaine $appartenirDomaine): self
-    {
-        $this->appartenir_domaine->removeElement($appartenirDomaine);
-
-        return $this;
-    }
-
     public function getNiveau(): ?Niveau
     {
         return $this->niveau;
@@ -402,6 +378,33 @@ class Formation
     public function setActif(bool $actif): self
     {
         $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Domaine>
+     */
+    public function getDomaines(): Collection
+    {
+        return $this->domaines;
+    }
+
+    public function addDomaine(Domaine $domaine): self
+    {
+        if (!$this->domaines->contains($domaine)) {
+            $this->domaines->add($domaine);
+            $domaine->addFormation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDomaine(Domaine $domaine): self
+    {
+        if ($this->domaines->removeElement($domaine)) {
+            $domaine->removeFormation($this);
+        }
 
         return $this;
     }

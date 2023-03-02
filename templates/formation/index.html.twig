@@ -17,6 +17,7 @@
                 <th>Duree_hentreprise</th>
                 <th>Duree_mois</th>
                 <th>Image</th>
+                <th>Domaines</th>
                 <th>Niveau</th>
                 <th>Actif</th>
                 <th>actions</th>
@@ -34,6 +35,11 @@
                 <td>{{ formation.dureeHentreprise }}</td>
                 <td>{{ formation.dureeMois }}</td>
                 <td>{{ formation.image }}</td>
+                <td>
+                    {% for domaine in formation.domaines %}
+                        {{ domaine.titre }}
+                    {% endfor %}
+                </td>
                 <td>{{ formation.niveau.titre }}</td>   
                 <td>{{ formation.actif ? 'Yes' : 'No' }}</td>
                 <td>

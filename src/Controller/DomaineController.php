@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Domaine;
 use App\Form\DomaineType;
 use App\Repository\DomaineRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -49,7 +50,7 @@ class DomaineController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_domaine_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Domaine $domaine, DomaineRepository $domaineRepository): Response
+    public function edit(Request $request, Domaine $domaine, DomaineRepository $domaineRepository, ManagerRegistry $mr): Response
     {
         $form = $this->createForm(DomaineType::class, $domaine);
         $form->handleRequest($request);
