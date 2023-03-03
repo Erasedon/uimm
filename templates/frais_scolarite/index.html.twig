@@ -11,7 +11,7 @@
                 <th>Id</th>
                 <th>Description</th>
                 <th>Formation</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +26,8 @@
 
                 </td>
                 <td>
-                    <a href="{{ path('app_frais_scolarite_show', {'id': frais_scolarite.id}) }}">show</a>
-                    <a href="{{ path('app_frais_scolarite_edit', {'id': frais_scolarite.id}) }}">edit</a>
+                    <a href="{{ path('app_frais_scolarite_show', {'id': frais_scolarite.id}) }}">Aperçu</a>
+                    <a href="{{ path('app_frais_scolarite_edit', {'id': frais_scolarite.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -38,5 +38,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_frais_scolarite_new') }}">Create new</a>
+    <a href="{{ path('app_frais_scolarite_new') }}">Créer</a>
 {% endblock %}

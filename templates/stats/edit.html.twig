@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Stats</h1>
 
-    {{ include('stats/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('stats/_form.html.twig', {'button_label': 'Actualiser'}) }}
 
-    <a href="{{ path('app_stats_index') }}">back to list</a>
+    <a href="{{ path('app_stats_index') }}">Retour vers la liste</a>
 
     {{ include('stats/_delete_form.html.twig') }}
 {% endblock %}

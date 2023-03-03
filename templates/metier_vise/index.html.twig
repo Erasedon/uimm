@@ -13,7 +13,7 @@
                 <th>Description</th>
                 <th>Url</th>
                 <th>Formation</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,8 +30,8 @@
 
                 </td>
                 <td>
-                    <a href="{{ path('app_metier_vise_show', {'id': metier_vise.id}) }}">show</a>
-                    <a href="{{ path('app_metier_vise_edit', {'id': metier_vise.id}) }}">edit</a>
+                    <a href="{{ path('app_metier_vise_show', {'id': metier_vise.id}) }}">Aperçu</a>
+                    <a href="{{ path('app_metier_vise_edit', {'id': metier_vise.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -42,5 +42,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_metier_vise_new') }}">Create new</a>
+    <a href="{{ path('app_metier_vise_new') }}">Créer</a>
 {% endblock %}

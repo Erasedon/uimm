@@ -11,7 +11,7 @@
                 <th>Id</th>
                 <th>Code</th>
                 <th>Formation</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,8 @@
                     {% endfor %}
                     </td>
                 <td>
-                    <a href="{{ path('app_code_formation_show', {'id': code_formation.id}) }}">show</a>
-                    <a href="{{ path('app_code_formation_edit', {'id': code_formation.id}) }}">edit</a>
+                    <a href="{{ path('app_code_formation_show', {'id': code_formation.id}) }}">Aperçu</a>
+                    <a href="{{ path('app_code_formation_edit', {'id': code_formation.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_code_formation_new') }}">Create new</a>
+    <a href="{{ path('app_code_formation_new') }}">Créer</a>
 {% endblock %}
