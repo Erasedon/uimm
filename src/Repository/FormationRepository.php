@@ -43,9 +43,10 @@ class FormationRepository extends ServiceEntityRepository
     {
         $query = $this->createQueryBuilder('f');
 
+        
         if ($domaine) {
             $query
-                ->leftJoin('f.appartenir_domaine', 'd')
+                ->leftJoin('f.appartenir_domaine', 'd', 'f.id = d.formation_id')
                 ->andWhere('d.id = :id')
                 ->setParameter('id', $domaine);
         }
@@ -58,9 +59,9 @@ class FormationRepository extends ServiceEntityRepository
 
         if ($type) {
             $query
-                ->leftJoin('f.effectuer_type_formation', 'tf')
-                ->andWhere('tf.id = :id')
-                ->setParameter('id', $type);
+                ->leftJoin('f.effectuer_type_formation', 'tf', 'tf.formation_id = f.id')
+                ->andWhere('tf.id = :id2')
+                ->setParameter('id2', $type);
         }
 
         return $query->getQuery()->getResult();
