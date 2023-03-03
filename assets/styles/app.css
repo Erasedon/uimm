@@ -2,10 +2,6 @@ body {
     background-color: lightgray;
 }
 
-/* .turbo-progress-bar{
-    visibility: hidden;
-} */
-
 .turbo-progress-bar{
     height: 2px;
     background-color: blue;
