@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/stats')]
+#[Route('/admin/stats')]
 class StatsController extends AbstractController
 {
     #[Route('/', name: 'app_stats_index', methods: ['GET'])]

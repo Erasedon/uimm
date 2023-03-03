@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/formation')]
+#[Route('/admin/formation')]
 class FormationController extends AbstractController
 {
     #[Route('/', name: 'app_formation_index', methods: ['GET'])]
