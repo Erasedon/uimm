@@ -6,20 +6,20 @@
 
 
 
+<h1>Nos formations</h1>
         {% for message in app.flashes('success') %}
             <div style="color:green; font-weight:bold">{{ message }}</div>
         {% endfor %}
-    <div class="mx-auto block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
-<h1>Nos formations</h1>
+    <div class=" flex flex-wrap block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
         {{ form_start(form)}}
-        <div class="block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+        <div class="block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
           {{ form_row(form.domaine) }}
      
           </div>
-        <div class="block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+        <div class="block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
         {{ form_row(form.niveau) }}
         </div>
-        <div class="block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+        <div class="block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
         {{ form_row(form.type) }}
         </div>
 
