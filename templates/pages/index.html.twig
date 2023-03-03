@@ -105,23 +105,55 @@
 			</nav>
 		</div>
 
-   <div class="bandeau_acceuil flex flex-col flex-wrap ">
-            <div class="titre_et_btn my-20 " style="align-items: center;">
-            <div class="titre text-5xl mt-16"><h1> UIMM</h1></div>
-            <div class="description_uimm mt-10 text-lg"<p>L'industrie est un secteur en pleine transformation. Organisation du travail, outils, métiers... le secteur se renouvelle et recrute largement en poursuivant un objectif : construire le monde de demain.</p></div>
+   <div class="bandeau_acceuil flex flex-col flex-wrap min-w-fit">
+            <div class="titre_et_btn my-20  " style="align-items: center;">
+            <div class="logo_uimm w-32 max-w-max" style=""><img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}" /></div>
+            <div class="description_uimm mt-10 text-lg text-tahiti-100 "<p>L'industrie est un secteur en pleine transformation. Organisation du travail, outils, métiers... le secteur se renouvelle et recrute largement en poursuivant un objectif : construire le monde de demain.</p></div>
 
             <!-- Before extracting a custom class -->
-                <button class=" mt-14 px-2 text-white bg-black font-semibold rounded-lg shadow-md hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75">
+                <button class=" mt-14 p-2.5 bg-tahiti-100 font-semibold rounded-lg shadow-md hover:bg-tahiti-600 hover:text-tahiti-100 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600">
                   Nous Contacter
                 </button>
 
    </div>
-
     </div>
-       <div class="titre_formation text-5xl mt-10" style="text-align:center">
-       <h2>Toute les formations</h2>
-   </div> 
+       <div class="titre_formation text-5xl mt-10 min-w-fit" style="text-align:center;text-decoration:none" href="">
+       <h2>Toutes les formations</h2> 
+	   </div> 
+  
+   <div class="slider_container">
+  
+   
+   </div>
 	</body>
+
+
+    <footer>
+    <div class="footer_ensemble bg-cover p-8 ">
+			<div class="logo_F w-32 pt-12 lg:ml-auto "><img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}" /></div>
+       			<div class="titre_footer text-tahiti-600 pl-12 ml-12 max-width: max-content;"><h3>Toute Nos formations</h3>
+
+   					<lu>
+   							<li></li>
+   							<li></li>
+   							<li></li>
+   					</lu>
+				</div>
+          			<div id="titre_footer2"><h3>Toute Nos formations</h3>
+   							<lu>
+   									<li></li>
+   									<li></li>
+   									<li></li>
+   							</lu>
+   					</div>
+   				 </div>
+   			
+   		</div>
+   <div class="partenaire"></div>
+   <div class="footer_fin"></div>
+    </footer>
+  
+    
 {% endblock %}
 {% block script %}
 	<script>
