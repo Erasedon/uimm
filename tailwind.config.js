@@ -1,34 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./assets/**/*.js",
-    "./templates/**/*.html.twig",
-
-  ],
+  content: ['./templates/**/*.html.twig',
+  './node_modules/tw-elements/dist/js/**/*.js'], 
   theme: {
-
+    extend: {
+      height: {
+        '128': '45rem',
+      }
+    },
     colors: {
-
+    
+      'white': '#ffffff',
       'tahiti': {
-        /**bleu */
         100: '#112c50',
-        /**gris */
         200: '#e8e8e8',
-        /**blanc casser */  
         300: '#f6f6f6',
-        /**noir */  
         400: '#oooooo',
-        /**orange */ 
         500: '#ef6602',
-        /**blanc*/  
-        600: '#ffffff'   
-
+        600: '#000000'
+        
       },
       // ...
     },
-    extend: {},
   },
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin")],
 }
-
-
