@@ -10,12 +10,18 @@ module.exports = {
     colors: {
 
       'tahiti': {
-        100: '#112c50',  /**bleu */
-        200: '#e8e8e8',  /**gris */
-        300: '#f6f6f6',  /**blanc casser */
-        400: '#oooooo',  /**noir */
-        500: '#ef6602',  /**orange */
-        600: '#ffffff'   /**blanc*/
+        /**bleu */
+        100: '#112c50',
+        /**gris */
+        200: '#e8e8e8',
+        /**blanc casser */  
+        300: '#f6f6f6',
+        /**noir */  
+        400: '#oooooo',
+        /**orange */ 
+        500: '#ef6602',
+        /**blanc*/  
+        600: '#ffffff'   
 
       },
       // ...

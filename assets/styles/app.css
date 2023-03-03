@@ -138,11 +138,12 @@ body {
             padding-top: 23px;
             font-family:'Open Sauce Light';
             cursor:pointer;
+            
             /* border:solid 1px white; */
         
         }
 
-        .titre_footer2 {
+        #titre_footer2 {
             width: 26%;
             height: auto;
             padding-top: 24px;
