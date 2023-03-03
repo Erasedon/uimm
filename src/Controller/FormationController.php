@@ -28,34 +28,44 @@ class FormationController extends AbstractController
         $formations = $formationRepo->filterFormations($domaine, $niveau, $typeFormation);
 
         $form = $this->createFormBuilder()
-            ->add('domaine', EntityType::class, [
-                'mapped' => false,
-                'class' => Domaine::class,
-                'choice_label' => 'titre',
-                'placeholder' => 'Choisir un domaine',
-                'label' => 'Domaine : ',
-                'required' => false,
-                'data' => $domaine ? $domaineRepo->find($domaine) : null
-            ])
-            ->add('niveau', EntityType::class, [
-                'mapped' => false,
-                'class' => Niveau::class,
-                'choice_label' => 'titre',
-                'placeholder' => 'Choisir un niveau',
-                'label' => 'Niveau : ',
-                'required' => false,
-                'data' => $niveau ? $niveauRepo->find($niveau) : null
-            ])
-            ->add('type', EntityType::class, [
-                'mapped' => false,
-                'class' => TypeFormation::class,
-                'choice_label' => 'titre',
-                'placeholder' => 'Choisir un type de formation',
-                'label' => 'Type : ',
-                'required' => false,
-                'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null
-            ])
-            ->getForm();
+        ->add('domaine', EntityType::class, [
+            'mapped' => false,
+            'class' => Domaine::class,
+            'choice_label' => 'titre',
+            'placeholder' => 'Choisir un domaine',
+            'label' => 'Domaine : ',
+            'required' => false,
+            'data' => $domaine ? $domaineRepo->find($domaine) : null,
+            'attr' => [
+                'class' => 'mt-2 block w-full rounded-md border border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+            ]
+        ])
+        ->add('niveau', EntityType::class, [
+            'mapped' => false,
+            'class' => Niveau::class,
+            'choice_label' => 'titre',
+            'placeholder' => 'Choisir un niveau',
+            'label' => 'Niveau : ',
+            'required' => false,
+            'data' => $niveau ? $niveauRepo->find($niveau) : null,
+            'attr' => [
+                'class' => 'mt-2 block w-full rounded-md border border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+            ]
+        ])
+        ->add('type', EntityType::class, [
+            'mapped' => false,
+            'class' => TypeFormation::class,
+            'choice_label' => 'titre',
+            'placeholder' => 'Choisir un type de formation',
+            'label' => 'Type : ',
+            'required' => false,
+            'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null,
+            'attr' => [
+                'class' => 'mt-2 block w-full rounded-md border border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+            ]
+        ])
+        ->getForm();
+    
 
         $form->handleRequest($request);
 
