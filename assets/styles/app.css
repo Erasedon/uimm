@@ -134,24 +134,25 @@ body {
         } 
 
         .titre_footer{
-            width: 17%;
+            width:40%;
             height:auto;
             padding-top: 23px;
             font-family:'Open Sauce Light';
             cursor:pointer;
-            padding:71px;
+            color:white;
+            /* padding:71px; */
             /* border:solid 1px white; */
         
         }
 
         #titre_footer2 {
-            width: 17%;
+            width: 20%;
             height: auto;
             padding-top: 24px;
             font-family: 'Open Sauce Light';
             /* border: solid 1px violet; */
-            margin-top: -214px;
-            margin-left: 149px;
+            /* margin-top: -214px;
+            margin-left: 149px; */
             cursor:pointer;
         }  
         .footer_ensemble {
