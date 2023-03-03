@@ -1,0 +1,163 @@
+[33mcommit ed10fa42b8dc5348f8e0a0d2ce35c2bec10ad0e3[m[33m ([m[1;36mHEAD -> [m[1;32mles-partenaires[m[33m, [m[1;31morigin/les-partenaires[m[33m)[m
+Merge: e35eed4 94f1bcf
+Author: Erasedon <46790756+Erasedon@users.noreply.github.com>
+Date:   Fri Mar 3 14:39:22 2023 +0100
+
+    Merge branch 'DEV-' into les-partenaires
+
+[33mcommit e35eed4898afaba49f03138b5e6956df5f40819c[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Fri Mar 3 14:09:34 2023 +0100
+
+    test partenaire footer ok
+
+[33mcommit 286bf6f2e494c6e30f33d56f70b8a743d0dbd756[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Fri Mar 3 13:42:56 2023 +0100
+
+    ok partenair
+
+[33mcommit f6499e79a7168ef6eb7e08cd5942fba26fe8f4a8[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Fri Mar 3 13:02:52 2023 +0100
+
+    partenaire test
+
+[33mcommit d0eb4e1f90857193e566fda7c54c40b9a6b54af1[m[33m ([m[1;31morigin/responsive[m[33m, [m[1;32mresponsive[m[33m)[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Fri Mar 3 11:24:53 2023 +0100
+
+    responsive test
+
+[33mcommit 94f1bcf2cec150592f1f9c90e4a49bcb00ec15de[m[33m ([m[1;31morigin/filtre_ameliore[m[33m, [m[1;31morigin/Front_listing_formation[m[33m)[m
+Author: Erasedon <46790756+Erasedon@users.noreply.github.com>
+Date:   Fri Mar 3 10:47:10 2023 +0100
+
+    update merge
+
+[33mcommit b11cd4ec97e92e42632a27dc4e9771b8b7f3e6af[m
+Author: Erasedon <46790756+Erasedon@users.noreply.github.com>
+Date:   Fri Mar 3 10:23:21 2023 +0100
+
+    bug merge
+
+[33mcommit 8f78689f74e25e98b13eed56640676d981e0f3c7[m
+Merge: 6aa9f81 2b4e0f4
+Author: Erasedon <46790756+Erasedon@users.noreply.github.com>
+Date:   Fri Mar 3 10:21:49 2023 +0100
+
+    Merge pull request #2 from Erasedon/Slider
+    
+    Slider version final
+
+[33mcommit 2b4e0f4478d95037f5db719a7993a0c0cdb71c74[m[33m ([m[1;31morigin/Slider[m[33m)[m
+Merge: f1ee4f7 6aa9f81
+Author: Erasedon <46790756+Erasedon@users.noreply.github.com>
+Date:   Fri Mar 3 10:21:37 2023 +0100
+
+    Merge branch 'DEV-' into Slider
+
+[33mcommit f1ee4f7442c7ba6231c99a9c57451b68dcabcfa5[m
+Author: Nowrei <furlancedric@gmail.com>
+Date:   Fri Mar 3 10:17:44 2023 +0100
+
+    app.css
+
+[33mcommit 4b50d642392c88785df63eb5138cd25336acc64c[m
+Author: Nowrei <furlancedric@gmail.com>
+Date:   Fri Mar 3 10:15:17 2023 +0100
+
+    changement nom
+
+[33mcommit fad09ebdd6fb49f868efc43924d2727c582e1f83[m[33m ([m[1;31morigin/footer[m[33m, [m[1;32mfooter[m[33m)[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Fri Mar 3 09:56:43 2023 +0100
+
+    fonts
+
+[33mcommit 6aa9f810441bee4650263a5d4e38346544c558b4[m
+Merge: 9d8d0df e631af2
+Author: Joannie3 <98819809+Joannie3@users.noreply.github.com>
+Date:   Fri Mar 3 09:44:51 2023 +0100
+
+    Merge pull request #1 from Erasedon/listing_formation
+    
+    Listing formation
+
+[33mcommit e631af229b09cdd8e08d604e429624b2ce10996c[m[33m ([m[1;31morigin/listing_formation[m[33m)[m
+Author: joannie1 <joannie1@outlook.fr>
+Date:   Fri Mar 3 09:43:14 2023 +0100
+
+    filtre fonctionnel
+
+[33mcommit dcd73eaec263b3dfa4cfc65e666571459a06fa09[m
+Author: Nowrei <furlancedric@gmail.com>
+Date:   Fri Mar 3 08:36:34 2023 +0100
+
+    Slider version final
+
+[33mcommit 437e115874736843189e35628c0c6daf17bc0ec4[m
+Author: joannie1 <joannie1@outlook.fr>
+Date:   Fri Mar 3 08:22:43 2023 +0100
+
+    maj
+
+[33mcommit da0658ec952bc58e9b449eb1c6a3fd9a3ebb5e43[m
+Author: joannie1 <joannie1@outlook.fr>
+Date:   Thu Mar 2 16:13:52 2023 +0100
+
+    debut filtre
+
+[33mcommit e7e9c418e24b9e106ab2ea9f31bd0a9bc2a4e101[m[33m ([m[1;31morigin/acceuil[m[33m, [m[1;32macceuil[m[33m)[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Thu Mar 2 08:38:46 2023 +0100
+
+    acceuil test
+
+[33mcommit 8ec18120194826cd54f949571f43f3a57ffe09d9[m[33m ([m[1;31morigin/navbar[m[33m, [m[1;32mnavbar[m[33m)[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Wed Mar 1 12:10:25 2023 +0100
+
+    NAV OK
+
+[33mcommit 9d8d0dfaab9e69bec15b3a404b9fc2ef9ca71f3e[m
+Author: joannie1 <joannie1@outlook.fr>
+Date:   Wed Mar 1 12:07:28 2023 +0100
+
+    maj bdd
+
+[33mcommit af107b788057e8602b119486b3e4ff8a4001aab6[m
+Author: joannie1 <joannie1@outlook.fr>
+Date:   Wed Mar 1 11:23:50 2023 +0100
+
+    bdd
+
+[33mcommit 26a4cc3ceb382fb4816fafbf19bde94054e2fc1e[m
+Author: baxter08 <baxter08@hotmail.fr>
+Date:   Wed Mar 1 10:38:28 2023 +0100
+
+    instalation
+
+[33mcommit 6d34b724dcef09b8eadc10d7cca1917ec6c34c94[m[33m ([m[1;32mDEV-[m[33m)[m
+Author: yanis.pirlet <yanis.pirlet@gmail.com>
+Date:   Tue Feb 28 14:39:45 2023 +0100
+
+    webpack build
+
+[33mcommit 4ae095576b1db1d292cdb5ecce94c323a84771d9[m
+Author: Erasedon <46790756+Erasedon@users.noreply.github.com>
+Date:   Tue Feb 28 14:15:15 2023 +0100
+
+    Create README.md
+
+[33mcommit c7544994dd280a799fdf9f9c38d437a96b4bccf4[m
+Author: yanis.pirlet <yanis.pirlet@gmail.com>
+Date:   Tue Feb 28 13:57:54 2023 +0100
+
+    Add webapp packages
+
+[33mcommit 63c88ac679721ecdb809ddd3a3f653cd8a8a4083[m
+Author: yanis.pirlet <yanis.pirlet@gmail.com>
+Date:   Tue Feb 28 13:57:15 2023 +0100
+
+    Add initial set of files
