@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+
+
+
+<a href="{{ path('app_formation') }}">Formations</a>
+
+<h1>Page de test</h1>
+
+{{ form_start(form) }}
+
+{{ form_row(form.nom, {'attr' : {'placeholder' : 'ex : John'}} ) }}
+{{ form_row(form.email, {'attr' : {'placeholder' : 'ex : John@exemple.fr'}}) }}
+{{ form_row(form.message, {'attr' : {'placeholder' : 'ex : Bonjour tout le monde'}}) }}
+
+<button type="submit"> Envoyer ! </button>
+{{ form_end(form) }}
+
+{% endblock %}
