@@ -36,7 +36,7 @@
                 <td>{{ formation.dureeMois }}</td>
                 <td>{{ formation.image }}</td>
                 <td>
-                    {% for domaine in formation.domaines %}
+                    {% for domaine in formation.appartenirDomaine %}
                         {{ domaine.titre }}
                     {% endfor %}
                 </td>

@@ -51,7 +51,7 @@ class FormationType extends AbstractType
                 'multiple' => true,
                 'by_reference' => false
             ])
-            ->add('domaines', EntityType::class, [
+            ->add('appartenir_domaine', EntityType::class, [
                 'class' => Domaine::class,
                 'choice_label' => 'titre',
                 'expanded' => true,

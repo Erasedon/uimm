@@ -21,7 +21,7 @@ class Domaine
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
-    #[ORM\ManyToMany(targetEntity: Formation::class, inversedBy: 'domaines')]
+    #[ORM\ManyToMany(targetEntity: Formation::class, mappedBy: 'appartenir_domaine')]
     private Collection $formations;
 
     public function __construct()
@@ -70,6 +70,7 @@ class Domaine
     {
         if (!$this->formations->contains($formation)) {
             $this->formations->add($formation);
+            $formation->addAppartenirDomaine($this);
         }
 
         return $this;
@@ -77,9 +78,10 @@ class Domaine
 
     public function removeFormation(Formation $formation): self
     {
-        $this->formations->removeElement($formation);
+        if ($this->formations->removeElement($formation)) {
+            $formation->removeAppartenirDomaine($this);
+        }
 
         return $this;
     }
-    
 }
