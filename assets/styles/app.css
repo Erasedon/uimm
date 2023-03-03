@@ -61,9 +61,11 @@ body {
 .titre_footer{
     width: 20%;
     height:200px;
+    padding-left: 70px;
     padding-top: 23px;
     font-family:'Open Sauce Light';
-    border:solid 1px white;
+    cursor:pointer;
+    /* border:solid 1px white; */
     
 }
 
@@ -71,12 +73,13 @@ body {
     width: 20%;
     height: 200px;
     padding-top: 24px;
-    padding-left: 46px;
+    padding-left: -18px;
     font-family: 'Open Sauce Light';
-    border: solid 1px violet;
+    /* border: solid 1px violet; */
     color: white;
     margin-top: 0px;
-    margin-left: 42px;
+    cursor:pointer;
+    /* margin-left: 0px; */
 }
 
 .slider_container{
@@ -85,10 +88,14 @@ body {
     border:solid 1px yellowgreen;
 }
 
-.partenaire{
+.partenaire {
     width: 100%;
-    height: 233px;
-    border:1px solid gray;
+    height: auto;
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 63px;
 }
 .footer_fin{
     width: 100%;
@@ -99,51 +106,53 @@ body {
 }
 	/* Styles pour écran de 480 à 720px */
 @media screen and (max-width: 980px) {
-    .bandeau_acceuil{
-        position: relative;
-        width: 100%;
-        height: calc(40vh - 80px);
-        border-top: 1px gray solid;
-        /* background-color: gray; */
-        background-image:url('../images/uimm_centre.jpg'); 
-        background-repeat: no-repeat;
-    }
+        .bandeau_acceuil{
+            position: relative;
+            width: 100%;
+            height: calc(40vh - 80px);
+            border-top: 1px gray solid;
+            /* background-color: gray; */
+            background-image:url('../images/uimm_centre.jpg'); 
+            background-repeat: no-repeat;
+        }
     
-      
         .titre_et_btn {
-          width: 50%; 
-          height: calc(69vh - 80px);
-          text-align: left; 
+            width: 50%; 
+            height: calc(69vh - 80px);
+            text-align: left; 
          }  
       
         .logo_uimm {
-          width: 40%; 
-           height: auto; 
-     } 
+            width: 40%; 
+            height: auto;
+         
+        } 
        
         .description_uimm {
             font-size: 1.32rem; 
-     } 
+        } 
 
-     .titre_footer{
-        width: 20%;
-        height:auto;
-        padding-top: 23px;
-        font-family:'Open Sauce Light';
-        border:solid 1px white;
+        .titre_footer{
+            width: 26%;
+            height:auto;
+            padding-top: 23px;
+            font-family:'Open Sauce Light';
+            cursor:pointer;
+            /* border:solid 1px white; */
         
-    }
+        }
 
-    .titre_footer2 {
-            width: 20%;
+        .titre_footer2 {
+            width: 26%;
             height: auto;
             padding-top: 24px;
             font-family: 'Open Sauce Light';
-            border: solid 1px violet;
+            /* border: solid 1px violet; */
             margin-top: -214px;
             margin-left: 149px;
-    }  
-    .footer_ensemble {
+            cursor:pointer;
+        }  
+        .footer_ensemble {
             width: 100%;
             height: 300px;
             background-color: #112c50;
@@ -153,18 +162,18 @@ body {
             justify-content: center;
             flex-direction: row;
             align-content: center;
-    }
-    .slider_container {
+        }
+        .slider_container {
             width: 100%;
             height: 42vh;
             border: solid 1px yellowgreen;
-    }
-    .logo_uimm img {
+        }
+        .logo_uimm img {
             position: inherit;
             max-width: -moz-max-content;
             max-width: max-content;
             width: 40%;
-    } 
+         } 
        
     }
     @media screen and (max-width: 350px) {
@@ -173,30 +182,30 @@ body {
         }
       
         .titre_et_btn {
-          width: 50%; 
-          height: calc(69vh - 80px);
-          text-align: left; 
+            width: 50%; 
+            height: calc(69vh - 80px);
+            text-align: left; 
          }  
       
         .logo_uimm {
-          width: 40%; 
-           height: auto; 
-     } 
+            width: 40%; 
+            height: auto; 
+        } 
        
         .description_uimm {
             font-size: 1.6rem; 
-     } 
+        } 
 
-     .titre_footer{
-        width: 20%;
-        height:auto;
-        padding-top: 23px;
-        font-family:'Open Sauce Light';
-        border:solid 1px white;
-        
-    }
+        .titre_footer{
+            width: 20%;
+            height:auto;
+            padding-top: 23px;
+            font-family:'Open Sauce Light';
+            border:solid 1px white;
+            
+        }
 
-         .titre_footer2 {
+        .titre_footer2 {
             width: 20%;
             height: auto;
             padding-top: 24px;
