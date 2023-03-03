@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./templates/**/*.html.twig',
-  './node_modules/tw-elements/dist/js/**/*.js'],
-  
+  './node_modules/tw-elements/dist/js/**/*.js'], 
   theme: {
     extend: {
       height: {
