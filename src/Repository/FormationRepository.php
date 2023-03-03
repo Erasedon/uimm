@@ -66,6 +66,10 @@ class FormationRepository extends ServiceEntityRepository
         return $query->getQuery()->getResult();
     }
 
+    // SELECT * FROM `formation` LEFT JOIN formation_domaine ON formation.id=formation_domaine.formation_id 
+    // LEFT JOIN formation_type_formation ON formation.id=formation_type_formation.formation_id 
+    // WHERE formation_domaine.domaine_id=2 AND formation_type_formation.type_formation_id=1;
+
     //    /**
     //     * @return Formation[] Returns an array of Formation objects
     //     */

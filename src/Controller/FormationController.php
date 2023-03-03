@@ -74,7 +74,6 @@ class FormationController extends AbstractController
             return $this->redirect($url);
         }
 
-
         return $this->render('pages/formation/index.html.twig', [
             'formations' => $formations,
             'form' => $form->createView()
