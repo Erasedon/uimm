@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\Stats;
 use App\Entity\Formation;
+use App\Entity\Niveau;
+use App\Repository\FormationRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -16,7 +18,11 @@ class StatsType extends AbstractType
         $builder
             ->add('annee')
             ->add('taux')
-            ->add('obtenir_formation',EntityType::class,['class'=>Formation::class,'choice_label'=>'titre'])
+            ->add('obtenir_formation',EntityType::class,['class'=>Formation::class,'query_builder' => function (FormationRepository $er) {
+                return $er->createQueryBuilder('f')
+                    ->select('f')
+                    ->join('f.niveau','fniveau');
+            },'choice_label'=>'titre'])
         ;
     }
 

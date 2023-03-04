@@ -16,7 +16,7 @@ class NiveauController extends AbstractController
     #[Route('/', name: 'app_niveau_index', methods: ['GET'])]
     public function index(NiveauRepository $niveauRepository): Response
     {
-        return $this->render('niveau/index.html.twig', [
+        return $this->render('admin/niveau/index.html.twig', [
             'niveaux' => $niveauRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class NiveauController extends AbstractController
             return $this->redirectToRoute('app_niveau_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('niveau/new.html.twig', [
+        return $this->renderForm('admin/niveau/new.html.twig', [
             'niveau' => $niveau,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class NiveauController extends AbstractController
     #[Route('/{id}', name: 'app_niveau_show', methods: ['GET'])]
     public function show(Niveau $niveau): Response
     {
-        return $this->render('niveau/show.html.twig', [
+        return $this->render('admin/niveau/show.html.twig', [
             'niveau' => $niveau,
         ]);
     }
@@ -60,7 +60,7 @@ class NiveauController extends AbstractController
             return $this->redirectToRoute('app_niveau_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('niveau/edit.html.twig', [
+        return $this->renderForm('admin/niveau/edit.html.twig', [
             'niveau' => $niveau,
             'form' => $form,
         ]);

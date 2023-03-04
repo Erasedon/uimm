@@ -16,7 +16,7 @@ class ConditionController extends AbstractController
     #[Route('/', name: 'app_condition_index', methods: ['GET'])]
     public function index(ConditionRepository $conditionRepository): Response
     {
-        return $this->render('condition/index.html.twig', [
+        return $this->render('admin/condition/index.html.twig', [
             'conditions' => $conditionRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class ConditionController extends AbstractController
             return $this->redirectToRoute('app_condition_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('condition/new.html.twig', [
+        return $this->renderForm('admin/condition/new.html.twig', [
             'condition' => $condition,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class ConditionController extends AbstractController
     #[Route('/{id}', name: 'app_condition_show', methods: ['GET'])]
     public function show(Condition $condition): Response
     {
-        return $this->render('condition/show.html.twig', [
+        return $this->render('admin/condition/show.html.twig', [
             'condition' => $condition,
         ]);
     }
@@ -60,7 +60,7 @@ class ConditionController extends AbstractController
             return $this->redirectToRoute('app_condition_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('condition/edit.html.twig', [
+        return $this->renderForm('admin/condition/edit.html.twig', [
             'condition' => $condition,
             'form' => $form,
         ]);

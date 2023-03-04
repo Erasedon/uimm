@@ -16,7 +16,7 @@ class FraisScolariteController extends AbstractController
     #[Route('/', name: 'app_frais_scolarite_index', methods: ['GET'])]
     public function index(FraisScolariteRepository $fraisScolariteRepository): Response
     {
-        return $this->render('frais_scolarite/index.html.twig', [
+        return $this->render('admin/frais_scolarite/index.html.twig', [
             'frais_scolarites' => $fraisScolariteRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class FraisScolariteController extends AbstractController
             return $this->redirectToRoute('app_frais_scolarite_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('frais_scolarite/new.html.twig', [
+        return $this->renderForm('admin/frais_scolarite/new.html.twig', [
             'frais_scolarite' => $fraisScolarite,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class FraisScolariteController extends AbstractController
     #[Route('/{id}', name: 'app_frais_scolarite_show', methods: ['GET'])]
     public function show(FraisScolarite $fraisScolarite): Response
     {
-        return $this->render('frais_scolarite/show.html.twig', [
+        return $this->render('admin/frais_scolarite/show.html.twig', [
             'frais_scolarite' => $fraisScolarite,
         ]);
     }
@@ -60,7 +60,7 @@ class FraisScolariteController extends AbstractController
             return $this->redirectToRoute('app_frais_scolarite_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('frais_scolarite/edit.html.twig', [
+        return $this->renderForm('admin/frais_scolarite/edit.html.twig', [
             'frais_scolarite' => $fraisScolarite,
             'form' => $form,
         ]);

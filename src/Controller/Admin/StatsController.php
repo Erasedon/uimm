@@ -16,7 +16,7 @@ class StatsController extends AbstractController
     #[Route('/', name: 'app_stats_index', methods: ['GET'])]
     public function index(StatsRepository $statsRepository): Response
     {
-        return $this->render('stats/index.html.twig', [
+        return $this->render('admin/stats/index.html.twig', [
             'stats' => $statsRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class StatsController extends AbstractController
             return $this->redirectToRoute('app_stats_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('stats/new.html.twig', [
+        return $this->renderForm('admin/stats/new.html.twig', [
             'stat' => $stat,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class StatsController extends AbstractController
     #[Route('/{id}', name: 'app_stats_show', methods: ['GET'])]
     public function show(Stats $stat): Response
     {
-        return $this->render('stats/show.html.twig', [
+        return $this->render('admin/stats/show.html.twig', [
             'stat' => $stat,
         ]);
     }
@@ -60,7 +60,7 @@ class StatsController extends AbstractController
             return $this->redirectToRoute('app_stats_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('stats/edit.html.twig', [
+        return $this->renderForm('admin/stats/edit.html.twig', [
             'stat' => $stat,
             'form' => $form,
         ]);

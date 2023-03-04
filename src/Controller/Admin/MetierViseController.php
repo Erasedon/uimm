@@ -16,7 +16,7 @@ class MetierViseController extends AbstractController
     #[Route('/', name: 'app_metier_vise_index', methods: ['GET'])]
     public function index(MetierViseRepository $metierViseRepository): Response
     {
-        return $this->render('metier_vise/index.html.twig', [
+        return $this->render('admin/metier_vise/index.html.twig', [
             'metier_vises' => $metierViseRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class MetierViseController extends AbstractController
             return $this->redirectToRoute('app_metier_vise_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('metier_vise/new.html.twig', [
+        return $this->renderForm('admin/metier_vise/new.html.twig', [
             'metier_vise' => $metierVise,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class MetierViseController extends AbstractController
     #[Route('/{id}', name: 'app_metier_vise_show', methods: ['GET'])]
     public function show(MetierVise $metierVise): Response
     {
-        return $this->render('metier_vise/show.html.twig', [
+        return $this->render('admin/metier_vise/show.html.twig', [
             'metier_vise' => $metierVise,
         ]);
     }
@@ -60,7 +60,7 @@ class MetierViseController extends AbstractController
             return $this->redirectToRoute('app_metier_vise_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('metier_vise/edit.html.twig', [
+        return $this->renderForm('admin/metier_vise/edit.html.twig', [
             'metier_vise' => $metierVise,
             'form' => $form,
         ]);

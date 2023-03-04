@@ -16,7 +16,7 @@ class CodeFormationController extends AbstractController
     #[Route('/', name: 'app_code_formation_index', methods: ['GET'])]
     public function index(CodeFormationRepository $codeFormationRepository): Response
     {
-        return $this->render('code_formation/index.html.twig', [
+        return $this->render('admin/code_formation/index.html.twig', [
             'code_formations' => $codeFormationRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class CodeFormationController extends AbstractController
             return $this->redirectToRoute('app_code_formation_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('code_formation/new.html.twig', [
+        return $this->renderForm('admin/code_formation/new.html.twig', [
             'code_formation' => $codeFormation,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class CodeFormationController extends AbstractController
     #[Route('/{id}', name: 'app_code_formation_show', methods: ['GET'])]
     public function show(CodeFormation $codeFormation): Response
     {
-        return $this->render('code_formation/show.html.twig', [
+        return $this->render('admin/code_formation/show.html.twig', [
             'code_formation' => $codeFormation,
         ]);
     }
@@ -60,7 +60,7 @@ class CodeFormationController extends AbstractController
             return $this->redirectToRoute('app_code_formation_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('code_formation/edit.html.twig', [
+        return $this->renderForm('admin/code_formation/edit.html.twig', [
             'code_formation' => $codeFormation,
             'form' => $form,
         ]);

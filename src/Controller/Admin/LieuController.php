@@ -16,7 +16,7 @@ class LieuController extends AbstractController
     #[Route('/', name: 'app_lieu_index', methods: ['GET'])]
     public function index(LieuRepository $lieuRepository): Response
     {
-        return $this->render('lieu/index.html.twig', [
+        return $this->render('admin/lieu/index.html.twig', [
             'lieus' => $lieuRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class LieuController extends AbstractController
             return $this->redirectToRoute('app_lieu_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('lieu/new.html.twig', [
+        return $this->renderForm('admin/lieu/new.html.twig', [
             'lieu' => $lieu,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class LieuController extends AbstractController
     #[Route('/{id}', name: 'app_lieu_show', methods: ['GET'])]
     public function show(Lieu $lieu): Response
     {
-        return $this->render('lieu/show.html.twig', [
+        return $this->render('admin/lieu/show.html.twig', [
             'lieu' => $lieu,
         ]);
     }
@@ -60,7 +60,7 @@ class LieuController extends AbstractController
             return $this->redirectToRoute('app_lieu_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('lieu/edit.html.twig', [
+        return $this->renderForm('admin/lieu/edit.html.twig', [
             'lieu' => $lieu,
             'form' => $form,
         ]);

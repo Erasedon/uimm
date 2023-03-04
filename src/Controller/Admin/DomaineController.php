@@ -17,7 +17,7 @@ class DomaineController extends AbstractController
     #[Route('/', name: 'app_domaine_index', methods: ['GET'])]
     public function index(DomaineRepository $domaineRepository): Response
     {
-        return $this->render('domaine/index.html.twig', [
+        return $this->render('admin/domaine/index.html.twig', [
             'domaines' => $domaineRepository->findAll(),
         ]);
     }
@@ -35,7 +35,7 @@ class DomaineController extends AbstractController
             return $this->redirectToRoute('app_domaine_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('domaine/new.html.twig', [
+        return $this->renderForm('admin/domaine/new.html.twig', [
             'domaine' => $domaine,
             'form' => $form,
         ]);
@@ -44,7 +44,7 @@ class DomaineController extends AbstractController
     #[Route('/{id}', name: 'app_domaine_show', methods: ['GET'])]
     public function show(Domaine $domaine): Response
     {
-        return $this->render('domaine/show.html.twig', [
+        return $this->render('admin/domaine/show.html.twig', [
             'domaine' => $domaine,
         ]);
     }
@@ -61,7 +61,7 @@ class DomaineController extends AbstractController
             return $this->redirectToRoute('app_domaine_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('domaine/edit.html.twig', [
+        return $this->renderForm('admin/domaine/edit.html.twig', [
             'domaine' => $domaine,
             'form' => $form,
         ]);
