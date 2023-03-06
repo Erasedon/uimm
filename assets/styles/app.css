@@ -104,6 +104,12 @@ body {
     background-color: black;
 }
 
+.statistique_container{
+    width: 100%;
+    height:300px;
+    border:solid 1px blue;
+}
+
 }
 	/* Styles pour écran de 480 à 720px */
 @media screen and (max-width: 980px) {
