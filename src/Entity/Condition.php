@@ -70,4 +70,5 @@ class Condition
 
         return $this;
     }
+    
 }

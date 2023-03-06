@@ -69,4 +69,5 @@ class FraisScolarite
 
         return $this;
     }
+   
 }

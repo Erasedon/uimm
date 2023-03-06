@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FraisScolarite index{% endblock %}
+
+{% block body %}
+    <h1>FraisScolarite index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Formation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for frais_scolarite in frais_scolarites %}
+            <tr>
+                <td>{{ frais_scolarite.id }}</td>
+                <td>{{ frais_scolarite.description }}</td>
+                <td>
+                  {% for formation in frais_scolarite.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}
+
+                </td>
+                <td>
+                    <a href="{{ path('app_frais_scolarite_show', {'id': frais_scolarite.id}) }}">Aperçu</a>
+                    <a href="{{ path('app_frais_scolarite_edit', {'id': frais_scolarite.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_frais_scolarite_new') }}">Créer</a>
+{% endblock %}

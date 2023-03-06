@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MetierVise index{% endblock %}
+
+{% block body %}
+    <h1>MetierVise index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Url</th>
+                <th>Formation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for metier_vise in metier_vises %}
+            <tr>
+                <td>{{ metier_vise.id }}</td>
+                <td>{{ metier_vise.titre }}</td>
+                <td>{{ metier_vise.description }}</td>
+                <td>{{ metier_vise.url }}</td>
+                 <td>
+                  {% for formation in metier_vise.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}
+
+                </td>
+                <td>
+                    <a href="{{ path('app_metier_vise_show', {'id': metier_vise.id}) }}">Aperçu</a>
+                    <a href="{{ path('app_metier_vise_edit', {'id': metier_vise.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_metier_vise_new') }}">Créer</a>
+{% endblock %}

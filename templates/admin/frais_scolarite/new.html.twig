@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FraisScolarite{% endblock %}
+
+{% block body %}
+    <h1>Créer FraisScolarite</h1>
+
+    {{ include('admin/frais_scolarite/_form.html.twig') }}
+
+    <a href="{{ path('app_frais_scolarite_index') }}">Retour vers la liste</a>
+{% endblock %}
