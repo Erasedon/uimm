@@ -6,30 +6,32 @@
 
 
 
-<h1>Nos formations</h1>
-        {% for message in app.flashes('success') %}
-            <div style="color:green; font-weight:bold">{{ message }}</div>
-        {% endfor %}
-    <div class=" flex flex-wrap block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
-        {{ form_start(form)}}
-        <div class="block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
-          {{ form_row(form.domaine) }}
-     
-          </div>
-        <div class="block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
-        {{ form_row(form.niveau) }}
-        </div>
-        <div class="block max-w-sm rounded-lg bg-white p-0.5 shadow-lg dark:bg-neutral-700">
-        {{ form_row(form.type) }}
-        </div>
+<h1 class="ml-1">Nos formations</h1>
+{% for message in app.flashes('success') %}
+	<div style="color:green; font-weight:bold">{{ message }}</div>
+{% endfor %}
 
-        <button type="submit">Filtrer</button>
+{{ form_start(form)}}
+<div class="grid grid-cols-3 gap-4">
+	<div class="relative mb-6 px-3" data-te-input-wrapper-init>
+		{{ form_row(form.domaine) }}
 
-        <a href="{{ path('app_test') }}">Test</a>
-    
-        {{ form_end(form)}}
+	</div>
+	<div class="relative mb-6 px-3" data-te-input-wrapper-init>
+		{{ form_row(form.niveau) }}
+	</div>
+	<div class="relative mb-6 px-3" data-te-input-wrapper-init>
+		{{ form_row(form.type) }}
+	</div>
+
     </div>
-       <div style="margin-top:15px">
+	<button class="ml-4 rounded bg-primary px-5 text-white" type="submit">Filtrer</button>
+
+
+	{{ form_end(form)}}
+
+	<div class="relative px-3 mt-12">
+
 
     {% for formation in formations %}
 

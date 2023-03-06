@@ -37,7 +37,7 @@ class FormationController extends AbstractController
             'required' => false,
             'data' => $domaine ? $domaineRepo->find($domaine) : null,
             'attr' => [
-                'class' => 'mt-0.5 block w-full rounded-md border border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+                'class' => 'mb-3 xl:w-96'
             ]
         ])
         ->add('niveau', EntityType::class, [
@@ -49,7 +49,7 @@ class FormationController extends AbstractController
             'required' => false,
             'data' => $niveau ? $niveauRepo->find($niveau) : null,
             'attr' => [
-                'class' => 'mt-0.5 block w-full rounded-md border border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+                'class' => 'mb-3 xl:w-96'
             ]
         ])
         ->add('type', EntityType::class, [
@@ -61,7 +61,7 @@ class FormationController extends AbstractController
             'required' => false,
             'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null,
             'attr' => [
-                'class' => 'mt-0.5 block w-full rounded-md border border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+                'class' => 'mb-3 xl:w-96'
             ]
         ])
         ->getForm();
