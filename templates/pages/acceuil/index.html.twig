@@ -96,67 +96,81 @@
 					<p class="my-4 text-xs text-center text-gray-400"></p>
 				</div>
 			</nav>
-		</div>
+		{# </div> #}
 
    <div class="bandeau_acceuil flex flex-col flex-wrap min-w-fit">
             <div class="titre_et_btn my-20  " style="align-items: center;">
-            <div class="logo_uimm w-32 max-w-max" style=""><img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}" /></div>
-            <div class="description_uimm mt-10 text-lg text-tahiti-100 "<p>L'industrie est un secteur en pleine transformation. Organisation du travail, outils, métiers... le secteur se renouvelle et recrute largement en poursuivant un objectif : construire le monde de demain.</p></div>
+				<div class="logo_uimm w-32 max-w-max" style=""><img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}" /></div>
 
-            <!-- Before extracting a custom class -->
-                    <button class=" mt-14 p-2.5 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600">
-                  Contactez-nous
-                </button>
+				<div class="description_uimm mt-10 text-lg text-tahiti-100 ">
+					<p>L'industrie est un secteur en pleine transformation. Organisation du travail, outils, métiers... le secteur se renouvelle et recrute largement en poursuivant un objectif : construire le monde de demain.</p>
+				</div>
 
-   </div>
+				<!-- Before extracting a custom class -->
+						<button class=" mt-14 p-2.5 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600">
+					Contactez-nous
+					</button>
+   			</div>
     </div>
-       <div class="titre_formation text-sm mt-28 font-semibold text-tahiti-100 sm:text-sm sm:tracking-tight lg:text-5xl font-['Open Sauce Light'] hover:text-tahiti-500  " style="text-align:center;text-decoration:none" href="">
-       <h2>Toutes les formations</h2> 
+
+
+       <div class="titre_formation mt-28 text-sm font-semibold text-tahiti-100 sm:text-sm sm:tracking-tight lg:text-5xl hover:text-tahiti-500" style="text-align:center;text-decoration:none" href="">
+       	<h2>Toutes les formations</h2>
+	   </div>
 
 	   <div class="bas_formation mb-28"></div>
 
-	  {% include('slider/index.html.twig') %}
-<div class="statistique_container">
-</div>
-   <div class="slider_container">
-   {% include('qui_sommes_nous/index.html.twig') %}
-   
-   </div>
+	  		{% include('slider/index.html.twig') %}
+
+		<div class="statistique_container">
+			<div class="stat"></div>
+			<div class="stat"></div>
+			<div class="stat"></div>
+			<div class="stat"></div>
+			<div class="stat"></div>
+		</div>
+
+		
+		<div class="include_nous">{% include('qui_sommes_nous/index.html.twig') %}</div>
+		
+
+
 	</body>
 
 
     <footer>
-    <div class="footer_ensemble bg-cover p-8 ">
-			<div class="logo_F w-32 pt-8 lg:ml-auto "><img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}"></div>
-       			<div class="titre_footer">
-					<div class=" Qui_somme_nous text-lg text-white hover:text-tahiti-500" href="">Qui somme nous ?<br></div>
-					<div class=" Formation_continue text-lg text-white hover:text-tahiti-500" href="">Formation Continue<br></div>
-					<div class=" Demandeurs_demploi text-lg text-white hover:text-tahiti-500" href="">Demandeurs d'emploi<br></div>
-					<div class=" Offre_Alternance text-lg text-white hover:text-tahiti-500" href=""> Offre Alternance<br></div>
-					<div class=" Nos_vidéos text-lg text-white hover:text-tahiti-500" href="">Nos vidéos<br></div>
-					<div class=" Contactez-nous text-lg text-white hover:text-tahiti-500" href="">Contactez-nous<br></div>
-				</div>
+		<div class="footer_ensemble bg-cover p-8 ">
+				<div class="logo_F w-32 pt-8 lg:ml-auto "><img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}"></div>
+						
+					<div class="titre_footer">
+						<div class=" Qui_somme_nous text-lg text-white hover:text-tahiti-500" href="">Qui somme nous ?<br></div>
+						<div class=" Formation_continue text-lg text-white hover:text-tahiti-500" href="">Formation Continue<br></div>
+						<div class=" Demandeurs_demploi text-lg text-white hover:text-tahiti-500" href="">Demandeurs d'emploi<br></div>
+						<div class=" Offre_Alternance text-lg text-white hover:text-tahiti-500" href=""> Offre Alternance<br></div>
+						<div class=" Nos_vidéos text-lg text-white hover:text-tahiti-500" href="">Nos vidéos<br></div>
+						<div class=" Contactez-nous text-lg text-white hover:text-tahiti-500" href="">Contactez-nous<br></div>
+					</div>
 
 					<div id="titre_footer2">
-   						    <div class="Formation_Alternance text-lg hover:text-tahiti-500" href="">Formation Alternance<br></div>
-    						<div class="Salarie text-lg hover:text-tahiti-500" href=""> Salariés<br></div>
+							<div class="Formation_Alternance text-lg hover:text-tahiti-500" href="">Formation Alternance<br></div>
+							<div class="Salarie text-lg hover:text-tahiti-500" href=""> Salariés<br></div>
 							<div class="Entreprise text-lg hover:text-tahiti-500" href="">Entreprise<br></div>
 							<div class="Prescripteur text-lg hover:text-tahiti-500" href="">Prescripteur<br></div>
 							<div class="Nos_centre text-lg hover:text-tahiti-500" href="">Nos centre<br></div>
-    				</div>
+					</div>
+			
+		</div>
 
-   	</div>	
-  
-   <div class="partenaire">
-   		<div class="div"><img src="{{ asset('build/images/leuro_sengage_grand_est.PNG')}}"/></div>
-   		<div class="div"><img src="{{ asset('build/images/Grand EST.PNG')}}"/></div>
-   		<div class="div"><img src="{{ asset('build/images/Lemplois_jeune.PNG')}}"/></div>
-   		<div class="div"><img src="{{ asset('build/images/Union Europeenne.PNG')}}"/></div>
-   </div>
+		<div class="partenaire">
+				<div class="div"><img src="{{ asset('build/images/leuro_sengage_grand_est.PNG')}}"/></div>
+				<div class="div"><img src="{{ asset('build/images/Grand EST.PNG')}}"/></div>
+				<div class="div"><img src="{{ asset('build/images/Lemplois_jeune.PNG')}}"/></div>
+				<div class="div"><img src="{{ asset('build/images/Union Europeenne.PNG')}}"/></div>
+		</div>
 
-   <div class="footer_fin text-white  py-5 text-xs text-center">
-   <p >© 2023 Pôle Formation UIMM Champagne-Ardenne - Tous droits réservés - Mentions Légales</p>
-   </div>
+			<div class="footer_fin text-white  py-5 text-xs text-center">
+			<p >© 2023 Pôle Formation UIMM Champagne-Ardenne - Tous droits réservés - Mentions Légales</p>
+			</div>
     </footer>
   
     
