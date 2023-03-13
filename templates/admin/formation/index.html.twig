@@ -29,7 +29,7 @@
             </thead>
             <tbody>
                   {% for formation in formations %}
-                <tr class="border-b transition duration-300 ease-in-out hover:bg-white hover:bg-tahiti-200">
+                <tr class="border-b transition duration-300 ease-in-out hover:bg-white hover:bg-neutral-600">
                 <td class="whitespace-nowrap px-6 py-4 font-medium" >{{ formation.id }}</td>
                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.titre }}</td>
                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.resume }}</td>
@@ -58,6 +58,7 @@
         {% endfor %}
             </tbody>
             </table>
+            <a href="{{ path('app_formation_new') }}">Créer</a>
         </div>
         </div>
     </div>

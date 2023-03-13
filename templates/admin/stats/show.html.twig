@@ -5,23 +5,23 @@
 {% block body %}
     <h1>Stats</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ stat.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ stat.id }}</td>
             </tr>
             <tr>
-                <th>Annee</th>
-                <td>{{ stat.annee }}</td>
+                <th scope="col" class="px-6 py-4">Annee</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ stat.annee }}</td>
             </tr>
             <tr>
-                <th>Taux</th>
-                <td>{{ stat.taux }}</td>
+                <th scope="col" class="px-6 py-4">Taux</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ stat.taux }}</td>
             </tr>
              <tr>
-                <th>Niveau</th>
-                <td>{{ stat.obtenirFormation.titre }}</td>
+                <th scope="col" class="px-6 py-4">Niveau</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ stat.obtenirFormation.titre }}</td>
             </tr>
         </tbody>
     </table>

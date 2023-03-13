@@ -5,19 +5,19 @@
 {% block body %}
     <h1>Lieu</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ lieu.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ lieu.id }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ lieu.description }}</td>
+                <th scope="col" class="px-6 py-4">Description</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ lieu.description }}</td>
             </tr>
             <tr>
-                <th>Formation</th>
-                <td> {% for lieux in lieu.formations %}
+                <th scope="col" class="px-6 py-4">Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" > {% for lieux in lieu.formations %}
                         {{ lieux.titre }}
                     {% endfor %}</td>
             </tr>

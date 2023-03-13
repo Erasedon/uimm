@@ -5,98 +5,98 @@
 {% block body %}
     <h1>Formation</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ formation.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
-                <td>{{ formation.titre }}</td>
+                <th scope="col" class="px-6 py-4">Titre</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.titre }}</td>
             </tr>
             <tr>
-                <th>Resume</th>
-                <td>{{ formation.resume }}</td>
+                <th scope="col" class="px-6 py-4">Resume</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.resume }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ formation.description }}</td>
+                <th scope="col" class="px-6 py-4">Description</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.description }}</td>
             </tr>
             <tr>
-                <th>Url</th>
-                <td>{{ formation.url }}</td>
+                <th scope="col" class="px-6 py-4">Url</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.url }}</td>
             </tr>
             <tr>
-                <th>Duree_heure</th>
-                <td>{{ formation.dureeHeure }}</td>
+                <th scope="col" class="px-6 py-4">Duree_heure</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.dureeHeure }}</td>
             </tr>
             <tr>
-                <th>Duree_hentreprise</th>
-                <td>{{ formation.dureeHentreprise }}</td>
+                <th scope="col" class="px-6 py-4">Duree_hentreprise</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.dureeHentreprise }}</td>
             </tr>
             <tr>
-                <th>Duree_mois</th>
-                <td>{{ formation.dureeMois }}</td>
+                <th scope="col" class="px-6 py-4">Duree_mois</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.dureeMois }}</td>
             </tr>
             <tr>
-                <th>Image</th>
-                <td>{{ formation.image }}</td>
+                <th scope="col" class="px-6 py-4">Image</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.image }}</td>
             </tr>
             <tr>
-                <th>Niveau</th>
-                <td>{{ formation.niveau.titre }}</td>
+                <th scope="col" class="px-6 py-4">Niveau</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.niveau.titre }}</td>
             </tr>
             <tr>
-                <th>code de formation</th>
-                <td>
+                <th scope="col" class="px-6 py-4">code de formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" >
                         {% for code in formation.identifierFormation %}
                         {{ code.code }}
                     {% endfor %}
                     </td>
             </tr>
             <tr>
-                <th>Frais Scolarite</th>
-                <td>
+                <th scope="col" class="px-6 py-4">Frais Scolarite</th>
+                 <td class="whitespace-nowrap px-6 py-4" >
                         {% for frais in formation.remunerer %}
                         {{ frais.description }}
                     {% endfor %}
                     </td>
             </tr>
             <tr>
-                <th>Lieux</th>
-                <td>
+                <th scope="col" class="px-6 py-4">Lieux</th>
+                 <td class="whitespace-nowrap px-6 py-4" >
                          {% for lieux in formation.situer %}
                         {{ lieux.description }}
                     {% endfor %}
                     </td>
             </tr>
             <tr>
-                <th>Metier viser</th>
-                <td>
+                <th scope="col" class="px-6 py-4">Metier viser</th>
+                 <td class="whitespace-nowrap px-6 py-4" >
                          {% for metier in formation.viserMetier %}
                         {{ metier.titre }}
                     {% endfor %}
                     </td>
             </tr>
             <tr>
-                <th>Type de Formation</th>
-                <td>
+                <th scope="col" class="px-6 py-4">Type de Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" >
                          {% for type in formation.effectuerTypeFormation %}
                         {{ type.titre }}
                     {% endfor %}
                     </td>
             </tr>
             <tr>
-                <th>Domaines</th>
-                <td>  {% for domaine in formation.appartenirDomaine %}
+                <th scope="col" class="px-6 py-4">Domaines</th>
+                 <td class="whitespace-nowrap px-6 py-4" >  {% for domaine in formation.appartenirDomaine %}
                         {{ domaine.titre }}
                     {% endfor %}</td>
             </tr>
               
             <tr>
-                <th>Actif</th>
-                <td>{{ formation.actif ? 'Yes' : 'No' }}</td>
+                <th scope="col" class="px-6 py-4">Actif</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ formation.actif ? 'Yes' : 'No' }}</td>
             </tr>
         </tbody>
     </table>
