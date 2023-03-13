@@ -5,64 +5,24 @@
 {% block body %}
 <div class="flex flex-wrap justify-center mt-10 ">
   <!-- Card 1 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-2 mb-4">
-    <div class="p-6">
-      <div class="font-bold text-xl mb-2">Formation 1</div>
-      <div class="text-gray-700 text-base">
-        Taux de réussite : 80%
-      </div>
-      <div class="text-red-500 text-base mt-2">
-        Taux d'échec : 20%
-      </div>
-    </div>
+  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    {{ render_chart(chart) }}
   </div>
     <!-- Card 2 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-2 mb-4">
-    <div class="p-6">
-      <div class="font-bold text-xl mb-2">Formation 2</div>
-      <div class="text-gray-700 text-base">
-        Taux de réussite : 80%
-      </div>
-      <div class="text-red-500 text-base mt-2">
-        Taux d'échec : 20%
-      </div>
-    </div>
+  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    {{ render_chart(chart1) }}
   </div>
     <!-- Card 3 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-2 mb-4">
-    <div class="p-6">
-      <div class="font-bold text-xl mb-2">Formation 3</div>
-      <div class="text-gray-700 text-base">
-        Taux de réussite : 80%
-      </div>
-      <div class="text-red-500 text-base mt-2">
-        Taux d'échec : 20%
-      </div>
-    </div>
+  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    {{ render_chart(chart2) }}
   </div>
     <!-- Card 4 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-2 mb-4">
-    <div class="p-6">
-      <div class="font-bold text-xl mb-2">Formation 4</div>
-      <div class="text-gray-700 text-base">
-        Taux de réussite : 80%
-      </div>
-      <div class="text-red-500 text-base mt-2">
-        Taux d'échec : 20%
-      </div>
-    </div>
+  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    {{ render_chart(chart3) }}
   </div>
     <!-- Card 5 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-2 mb-4">
-    <div class="p-6">
-      <div class="font-bold text-xl mb-2">Formation 5</div>
-      <div class="text-gray-700 text-base">
-        Taux de réussite : 80%
-      </div>
-      <div class="text-red-500 text-base mt-2">
-        Taux d'échec : 20%
-      </div>
-    </div>
+  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    {{ render_chart(chart4) }}
   </div>
   </div>
 {% endblock %}
