@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UIMM - Detail de la formation {{formation.titre}} {% endblock %}
+
+{% block body %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap');
+</style>
+
+
+    {% include('partials/_navbar.html.twig') %}
+
+    {# cadre ensemble de ma page border-2 border-[black] #}
+    <div class=" w-11/12 mx-auto mt-4 p-2  mb-5 pb-10"> 
+
+        {# <h1 class="text-[black] text-center text-4xl mb-5 font-bold mt-9">{{formation.titre}}</h1> #}
+
+        {# ici j'ai un cadre qui regroupe la photo et la description #}
+        <div class="flex flex-row mt-6">
+
+            {#  ici j'ai mon cadre photo #}
+            <div class="w-[40%] p-1 h-[500px]  relative">
+             {# <img src="{{ asset(formation.image) }}" alt="picture"> #}
+
+                <div class="w-[536px] h-[349px] z-20 mx-auto border-l-8 border-primary-600"><img src="{{ asset(formation.image) }}" alt="picture"></div>
+
+              </div>
+
+            {# ici j'ai mon cadre ensemble description #}
+            <div class="w-[60%] ml-1.5 p-1 flex flex-col pt-6"> 
+            
+                {# ici j'ai mon cadre pour mon niveau #}
+                <div class="mt-3 text-danger-600 font-semibold"> {{formation.niveau.titre}} ({{formation.niveau.description}})</div>
+                
+                {# ici j'ai mon cadre pour ma simple description #}
+                <div class="mt-3 text-primary-600 text-4xl mb-5 font-extrabold mt-9">{{formation.titre}} </div>
+
+
+                <div class="mt-3" style="font-family: 'Roboto', sans-serif;">{{formation.description}} </div>
+
+                <div class="flex flex-colum mt-5">
+                
+                    <div class="w-[50%]">
+                        <div class="text-secondary-800  font-semibold">DOMAINE</div>
+
+                        {% for form in formation.appartenirDomaine %}
+
+                            {{form.titre}}<br>
+                                         
+                        
+                        {% endfor %}
+
+                    </div>
+                    <div class="w-[50%] ">
+                        <div class="text-secondary-800  font-semibold">TYPE FORMATION</div>
+                            {% for form in formation.effectuerTypeFormation %}
+
+                                {{form.titre}}<br>
+   
+                            {% endfor %}
+                    </div>
+                </div>
+
+                
+
+   
+
+
+                {# ici j'ai mon cadre pour mon type de formation #}
+                {# <div class="mt-3">Type de formation : 
+                    {% for form in formation.effectuerTypeFormation %} #}
+
+                    {# {{form.titre}}{% if loop.last %}{% else %},{% endif %} #}
+{# 
+                      <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-success-50 px-[0.65em] pt-[0.35em] pb-[0.25em] text-center align-baseline text-[0.75em] font-bold leading-none text-neutral-600">
+                        {{form.titre}}
+                    </span> #}
+                    
+                        
+                    {# {% endfor %} #}
+                {# </div> #}
+
+            </div> {# fin ici j'ai mon cadre ensemble description #}
+
+        </div> {# fin ici j'ai un cadre qui regroupe la photo et la description #}
+
+        {# border-2 border-[black] #}
+        <div class="">
+            <div class=" flex flex-row mt-4"> 
+
+                <div class=" w-2/6 mx-auto">
+                    <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Conditions d'accès</h1>
+
+        
+
+                        {% for form in formation.possederCondition %}
+
+                            <li class="pl-1"> {{form.description}}</li>
+                                                
+                        {% endfor %}
+
+                </div>
+
+                <div class=" w-2/6 mx-auto">
+                    <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Lieu</h1>
+
+                        {% for form in formation.situer %}
+
+                            {{form.description}}<br>
+                        
+                        {% endfor %}
+                </div>
+
+            </div>
+
+            <div class="mt-20">
+
+                <div class="flex flex-row ">
+                    <div class=" w-2/6 mx-auto">
+                        <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Métiers visés</h1>
+
+                        {% for form in formation.viserMetier %}
+
+                            <li class="pl-1"> {{form.titre}} : {{form.description}}</li>
+                                                
+                        {% endfor %}
+
+                    </div>
+
+                    <div class=" w-2/6 mx-auto">
+                        <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Candidater</h1>
+
+                            Je candidate
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> {# fin cadre ensemble de ma page #}
+
+    {% include('partials/_footer.html.twig') %}
+
+{% endblock %}
