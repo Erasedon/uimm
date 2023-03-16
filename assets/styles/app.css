@@ -254,3 +254,15 @@ body {
     background-color: blue;
 }
 
+.bordure_ombre{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.pdf{
+    border-radius: 5px;    
+    padding: 5px 15px 5px 15px;
+}

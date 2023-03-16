@@ -79,4 +79,16 @@ class FormationController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    #[Route('/formation/{id}', name: 'app_formation_detail')]
+    public function detail(FormationRepository $formationRepo, int $id): Response
+    {
+
+        $formation = $formationRepo->find($id);
+        
+        return $this->render('pages/formation/detail.html.twig', [
+            'formation' => $formation
+        ]);
+
+    }
 }
