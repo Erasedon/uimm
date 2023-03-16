@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin/condition')]
 class ConditionController extends AbstractController
 {
-    #[Route('/', name: 'app_condition_index', methods: ['GET'])]
+    #[Route('/', name: 'app_admin_condition_index', methods: ['GET'])]
     public function index(ConditionRepository $conditionRepository): Response
     {
         return $this->render('admin/condition/index.html.twig', [
