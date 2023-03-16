@@ -80,7 +80,7 @@ class FormationController extends AbstractController
         ]);
     }
 
-    #[Route('/formation/{id}', name: 'app_formation')]
+    #[Route('/formation/{id}', name: 'app_formation_detail')]
     public function detail(FormationRepository $formationRepo, int $id): Response
     {
 

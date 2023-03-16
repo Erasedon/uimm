@@ -261,3 +261,8 @@ body {
 html{
     scroll-behavior: smooth;
 }
+
+.pdf{
+    border-radius: 5px;    
+    padding: 5px 15px 5px 15px;
+}
