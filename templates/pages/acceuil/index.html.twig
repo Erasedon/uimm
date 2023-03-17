@@ -119,8 +119,7 @@
 	   </div>
 
 	   <div class="bas_formation mb-8">
-
-	  		{% include('slider/index.html.twig') %}
+{% include 'slider/index.html.twig' with {'domaines': domaines} %}
 </div>
 		<div class="statistique_container">
 			<div class="stat"></div>
