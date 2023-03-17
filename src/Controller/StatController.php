@@ -149,7 +149,42 @@ class StatController extends AbstractController
             ],
         ]);
 
-        
+        $chartData = [
+            [
+                'label' => 'Développeur web et mobile (en %)',        'backgroundColor' => ['#0080FF', '#0080FF'],
+                'data' => [95, 5],
+            ],
+            [
+                'label' => 'CDA  (en %)',        'backgroundColor' => ['#FF0000', '#FF0000'],
+                'data' => [87, 13],
+            ],
+            [
+                'label' => 'UI Designer (en %)',        'backgroundColor' => ['#112c50', '#112c50'],
+                'data' => [100, 0],
+            ],
+            [
+                'label' => 'TSSR (en %)',        'backgroundColor' => ['#ef6602', '#ef6602'],
+                'data' => [73, 27],
+            ],
+            [
+                'label' => 'WIS (en %)',        'backgroundColor' => ['#000000', '#000000'],
+                'data' => [100, 0],
+            ],
+        ];
+
+        $chart5 = $chartBuilder->createChart(Chart::TYPE_BAR);
+
+        $chart5->setData([
+            'labels' => ['Reussite', 'Echec'],
+            'datasets' => $chartData,
+        ]);
+
+        $chart5->setOptions([
+            'scales' => [
+                'y' => ['suggestedMin' => 0,            'suggestedMax' => 20,],
+            ],
+        ]);
+
 
         return $this->render('stat/index.html.twig', [
             'controller_name' => 'StatController',
@@ -158,9 +193,7 @@ class StatController extends AbstractController
             'chart2' => $chart2,
             'chart3' => $chart3,
             'chart4' => $chart4,
+            'chart5' => $chart5
         ]);
     }
-    
-
-    
 }
