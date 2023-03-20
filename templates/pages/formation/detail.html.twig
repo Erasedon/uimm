@@ -78,15 +78,15 @@
         </div> {# fin ici j'ai un cadre qui regroupe la photo et la description #}
 
         <div class="mb-20" id="detail">
-            <div class="text-center"><button type="button" class="pdf bg-info-500 text-secondary-800"> Télécharger le PDF</button></div>
-            
+            <div class="text-center"><button type="button" > 
+            <a href="{{ path('app_formation_detail_pdf' , {'id' : formation.id }) }}" class="pdf bg-info-500 text-secondary-800">Télécharger le PDF</a></button></div>
         </div>
 
         {# border-2 border-[black] #}
             <div class=" flex flex-row mt-10" > 
 
                 <div class=" w-2/6 mx-auto" >
-                    <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Conditions d'accès</h1>
+                    <h1 class="text-danger-600 text-center text-2xl font-bold pb-5">Conditions d'accès</h1>
 
                         {% for form in formation.possederCondition %}
 
@@ -97,7 +97,7 @@
                 </div>  {# fin du cadre condition acces #}
 
                 <div class=" w-2/6 mx-auto">
-                        <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Métiers visés</h1>
+                        <h1 class="text-danger-600 text-center text-2xl font-bold pb-5">Métiers visés</h1>
 
                         {% for form in formation.viserMetier %}
 
@@ -110,7 +110,7 @@
 
             <div class="flex flex-row mt-20" >
                     <div class=" w-2/6 mx-auto">
-                        <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Lieu</h1>
+                        <h1 class="text-danger-600 text-center text-2xl font-bold pb-5">Lieu</h1>
 
                         {% for form in formation.situer %}
 
@@ -121,7 +121,7 @@
                     </div> {# fin du cadre metier visés #}
 
                     <div class=" w-2/6 mx-auto">
-                        <h1 class="text-[orange] text-center text-2xl font-bold pb-5">Candidater</h1>
+                        <h1 class="text-danger-600 text-center text-2xl font-bold pb-5">Candidater</h1>
                             Je candidate
                     </div> {# fin du cadre candidater #} 
                 </div> {# fin du cadre metier visé + candidater #}

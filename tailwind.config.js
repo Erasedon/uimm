@@ -35,6 +35,7 @@ module.exports = {
         600: '#000000'
       },
       'noir' : 'black',
+      'red' : 'red',
       '#EF6517' : 'orange',
       '#112C50' : '#112C50' // bleu uimm
       // ...

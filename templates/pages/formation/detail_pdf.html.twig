@@ -1,0 +1,66 @@
+{# {% extends 'base.html.twig' %} #}
+
+{% block title %}UIMM - Detail de la formation{% endblock %}
+
+{% block body %}
+
+<style>
+.pdf_cadre{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.image_pdf{
+    width: 15%;
+}
+
+.description_droite_pdf{
+    width: 85%;
+}
+
+.pdf_1{
+    display: flex;
+    flex-direction: row;
+}
+
+.colonne1_pdf{
+    width: 50%;
+}
+</style>
+
+<div class="pdf_cadre">
+
+    <div class="image_pdf"><img src="{{ asset(formation.image) }}" alt="picture"></div>
+
+    <div class="description_droite_pdf">
+
+        <div style="margin-top:10px;color:red;font-weight:bold"> {{formation.niveau.titre}} ({{formation.niveau.description}}) </div>
+        <div style="margin-top:10px"> {{formation.description}} </div>
+        <div class="pdf_1"> 
+            <div class="colonne1_pdf" >
+            
+                <div style="margin-top:10px;margin-bottom:10px;color:#565D6B">DOMAINE</div>
+                
+                {% for form in formation.appartenirDomaine %}
+
+                    <div style="margin-bottom:5px">{{form.titre}}</div>
+                            
+                {% endfor %}
+
+            </div> 
+
+            <div class="colonne1_pdf">
+                <div style="margin-top:10px;margin-bottom:10px;color:#565D6B">TYPE DE FORMATION</div>
+                {% for form in formation.effectuerTypeFormation %}
+
+                    <div style="margin-bottom:5px">{{form.titre}}</div>
+        
+                {% endfor %}
+            </div>    
+        </div>
+    </div>
+    <div>test</div>
+</div>
+     
+{% endblock %}

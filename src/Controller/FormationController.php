@@ -2,19 +2,23 @@
 
 namespace App\Controller;
 
-use App\Entity\Domaine;
+use Knp\Snappy\Pdf;
 use App\Entity\Niveau;
+use App\Entity\Domaine;
 use App\Entity\TypeFormation;
+use App\Repository\NiveauRepository;
 use App\Repository\DomaineRepository;
 use App\Repository\FormationRepository;
-use App\Repository\NiveauRepository;
 use App\Repository\TypeFormationRepository;
+use Knp\Bundle\SnappyBundle\KnpSnappyBundle;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class FormationController extends AbstractController
 {
@@ -89,6 +93,22 @@ class FormationController extends AbstractController
         return $this->render('pages/formation/detail.html.twig', [
             'formation' => $formation
         ]);
+
+    }
+
+    #[Route('/formation/pdf/{id}', name: 'app_formation_detail_pdf')]
+    public function detail_pdf(Pdf $knpSnappyPdf, FormationRepository $formationRepo, int $id)
+    {
+        $formation = $formationRepo->find($id);
+
+        $html = $this->renderView('pages/formation/detail_pdf.html.twig', array(
+            'formation' => $formation
+        ));
+
+        return new PdfResponse(
+            $knpSnappyPdf->getOutputFromHtml($html),
+            'file.pdf'
+        );
 
     }
 }
