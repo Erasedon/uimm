@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Niveau{% endblock %}
+
+{% block body %}
+    <h1>Edit Niveau</h1>
+
+    {{ include('admin/niveau/_form.html.twig', {'button_label': 'Actualiser'}) }}
+
+    <a href="{{ path('app_niveau_index') }}">Retour vers la liste</a>
+
+    {{ include('admin/niveau/_delete_form.html.twig') }}
+{% endblock %}

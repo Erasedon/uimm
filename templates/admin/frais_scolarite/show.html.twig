@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FraisScolarite{% endblock %}
+
+{% block body %}
+    <h1>FraisScolarite</h1>
+
+    <table class="min-w-full text-left text-sm font-light"  >
+        <tbody>
+            <tr>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ frais_scolarite.id }}</td>
+            </tr>
+            <tr>
+                <th scope="col" class="px-6 py-4">Description</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ frais_scolarite.description }}</td>
+            </tr>
+            <tr>
+                <th scope="col" class="px-6 py-4">Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" > {% for formation in frais_scolarite.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_frais_scolarite_index') }}">Retour vers la liste</a>
+
+    <a href="{{ path('app_frais_scolarite_edit', {'id': frais_scolarite.id}) }}">Modifier</a>
+
+    {{ include('admin/frais_scolarite/_delete_form.html.twig') }}
+{% endblock %}

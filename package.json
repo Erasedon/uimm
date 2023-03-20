@@ -29,6 +29,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "force": "^0.0.3",
         "tw-elements": "^1.0.0-beta1"
     }
 }

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Niveau{% endblock %}
+
+{% block body %}
+    <h1>Niveau</h1>
+
+    <table class="min-w-full text-left text-sm font-light"  >
+        <tbody>
+            <tr>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ niveau.id }}</td>
+            </tr>
+            <tr>
+                <th scope="col" class="px-6 py-4">Titre</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ niveau.titre }}</td>
+            </tr>
+            <tr>
+                <th scope="col" class="px-6 py-4">Description</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ niveau.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_niveau_index') }}">Retour vers la liste</a>
+
+    <a href="{{ path('app_niveau_edit', {'id': niveau.id}) }}">Modifier</a>
+
+    {{ include('admin/niveau/_delete_form.html.twig') }}
+{% endblock %}

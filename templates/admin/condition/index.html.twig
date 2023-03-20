@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Condition index{% endblock %}
+
+{% block body %}
+    <h1>Condition index</h1>
+<div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+
+    <table class="min-w-full text-left text-sm font-light"  >
+        <thead class="border-b font-medium dark:border-neutral-500">
+            <tr>
+                <th scope="col" class="px-6 py-4">Id</th>
+                <th scope="col" class="px-6 py-4">Description</th>
+                <th scope="col" class="px-6 py-4">Formation</th>
+                <th scope="col" class="px-6 py-4">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for condition in conditions %}
+            <tr class="border-b transition duration-300 ease-in-out hover:bg-white hover:bg-neutral-600">                 
+                 <td class="whitespace-nowrap px-6 py-4" >{{ condition.id }}</td>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ condition.description }}</td>
+                 <td class="whitespace-nowrap px-6 py-4" >
+                    {% for formation in condition.formations %}
+                        {{ formation.titre }}
+                    {% endfor %}
+                </td>
+            
+                 <td class="whitespace-nowrap px-6 py-4" >
+                    <a href="{{ path('app_condition_show', {'id': condition.id}) }}">Aperçu</a>
+                    <a href="{{ path('app_condition_edit', {'id': condition.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_condition_new') }}">Créer</a>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
