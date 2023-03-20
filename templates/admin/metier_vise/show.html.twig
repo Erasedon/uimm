@@ -5,34 +5,34 @@
 {% block body %}
     <h1>MetierVise</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ metier_vise.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ metier_vise.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
-                <td>{{ metier_vise.titre }}</td>
+                <th scope="col" class="px-6 py-4">Titre</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ metier_vise.titre }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ metier_vise.description }}</td>
+                <th scope="col" class="px-6 py-4">Description</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ metier_vise.description }}</td>
             </tr>
             <tr>
-                <th>Url</th>
-                <td>{{ metier_vise.url }}</td>
+                <th scope="col" class="px-6 py-4">Url</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ metier_vise.url }}</td>
             </tr>
              <tr>
-                <th>Formation</th>
-                <td> {% for formation in metier_vise.formations %}
+                <th scope="col" class="px-6 py-4">Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" > {% for formation in metier_vise.formations %}
                         {{ formation.titre }}
                     {% endfor %}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_metier_vise_index') }}">Retour vers la liste</a>
+    <a href="{{ path('app_admin_metier_vise_index') }}">Retour vers la liste</a>
 
     <a href="{{ path('app_metier_vise_edit', {'id': metier_vise.id}) }}">Modifier</a>
 

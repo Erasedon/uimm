@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin/niveau')]
 class NiveauController extends AbstractController
 {
-    #[Route('/', name: 'app_niveau_index', methods: ['GET'])]
+    #[Route('/', name: 'app_admin_niveau_index', methods: ['GET'])]
     public function index(NiveauRepository $niveauRepository): Response
     {
         return $this->render('admin/niveau/index.html.twig', [

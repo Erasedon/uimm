@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin/frais/scolarite')]
 class FraisScolariteController extends AbstractController
 {
-    #[Route('/', name: 'app_frais_scolarite_index', methods: ['GET'])]
+    #[Route('/', name: 'app_admin_frais_scolarite_index', methods: ['GET'])]
     public function index(FraisScolariteRepository $fraisScolariteRepository): Response
     {
         return $this->render('admin/frais_scolarite/index.html.twig', [

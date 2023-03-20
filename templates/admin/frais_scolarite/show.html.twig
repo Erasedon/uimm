@@ -5,26 +5,26 @@
 {% block body %}
     <h1>FraisScolarite</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ frais_scolarite.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ frais_scolarite.id }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ frais_scolarite.description }}</td>
+                <th scope="col" class="px-6 py-4">Description</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ frais_scolarite.description }}</td>
             </tr>
             <tr>
-                <th>Formation</th>
-                <td> {% for formation in frais_scolarite.formations %}
+                <th scope="col" class="px-6 py-4">Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" > {% for formation in frais_scolarite.formations %}
                         {{ formation.titre }}
                     {% endfor %}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_frais_scolarite_index') }}">Retour vers la liste</a>
+    <a href="{{ path('app_admin_frais_scolarite_index') }}">Retour vers la liste</a>
 
     <a href="{{ path('app_frais_scolarite_edit', {'id': frais_scolarite.id}) }}">Modifier</a>
 

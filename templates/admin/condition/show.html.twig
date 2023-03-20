@@ -5,26 +5,26 @@
 {% block body %}
     <h1>Condition</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ condition.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ condition.id }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ condition.description }}</td>
+                <th scope="col" class="px-6 py-4">Description</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ condition.description }}</td>
             </tr>
             <tr>
-                <th>Formation</th>
-                <td>      {% for formation in condition.formations %}
+                <th scope="col" class="px-6 py-4">Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" >      {% for formation in condition.formations %}
                         {{ formation.titre }}
                     {% endfor %}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_condition_index') }}">Retour vers la liste</a>
+    <a href="{{ path('app_admin_condition_index') }}">Retour vers la liste</a>
 
     <a href="{{ path('app_condition_edit', {'id': condition.id}) }}">Modifier</a>
 
