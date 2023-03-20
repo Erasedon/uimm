@@ -3,27 +3,30 @@
 {% block title %}Hello StatController!{% endblock %}
 
 {% block body %}
-<div class="flex flex-wrap justify-center mt-10 ">
+<div class="flex flex-wrap justify-center mt-10">
   <!-- Card 1 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
-    {{ render_chart(chart) }}
+  <div class="w-15/100 max-w-xs h-228 rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    <div class="flex1>">{{ render_chart(chart) }}</div>
   </div>
-    <!-- Card 2 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
-    {{ render_chart(chart1) }}
+  <!-- Card 2 -->
+  <div class="w-15/100 max-w-xs h-228 rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    <div class="flex1>">{{ render_chart(chart1) }}</div>
   </div>
-    <!-- Card 3 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
-    {{ render_chart(chart2) }}
+  <!-- Card 3 -->
+  <div class="w-15/100 max-w-xs h-228 rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    <div class="w-full h-full">{{ render_chart(chart2) }}</div>
   </div>
-    <!-- Card 4 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
-    {{ render_chart(chart3) }}
+  <!-- Card 4 -->
+  <div class="w-15/100 max-w-xs h-228 rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    <div class="flex1>">{{ render_chart(chart3) }}</div>
   </div>
-    <!-- Card 5 -->
-  <div class="max-w-xs rounded overflow-hidden shadow-lg mx-0.5 mb-4">
-    {{ render_chart(chart4) }}
+  <!-- Card 5 -->
+  <div class="w-15/100 max-w-xs h-228 rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    <div class="flex1>">{{ render_chart(chart4) }}</div>
   </div>
+  <div class="w-15/100 max-w-xs h-228 rounded overflow-hidden shadow-lg mx-0.5 mb-4">
+    <div class="flex1>">{{ render_chart(chart5) }}</div>
   </div>
-    {{ render_chart(chart5) }}
+</div>
+
 {% endblock %}
