@@ -28,34 +28,44 @@ class FormationController extends AbstractController
         $formations = $formationRepo->filterFormations($domaine, $niveau, $typeFormation);
 
         $form = $this->createFormBuilder()
-            ->add('domaine', EntityType::class, [
-                'mapped' => false,
-                'class' => Domaine::class,
-                'choice_label' => 'titre',
-                'placeholder' => 'Choisir un domaine',
-                'label' => 'Domaine : ',
-                'required' => false,
-                'data' => $domaine ? $domaineRepo->find($domaine) : null
-            ])
-            ->add('niveau', EntityType::class, [
-                'mapped' => false,
-                'class' => Niveau::class,
-                'choice_label' => 'titre',
-                'placeholder' => 'Choisir un niveau',
-                'label' => 'Niveau : ',
-                'required' => false,
-                'data' => $niveau ? $niveauRepo->find($niveau) : null
-            ])
-            ->add('type', EntityType::class, [
-                'mapped' => false,
-                'class' => TypeFormation::class,
-                'choice_label' => 'titre',
-                'placeholder' => 'Choisir un type de formation',
-                'label' => 'Type : ',
-                'required' => false,
-                'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null
-            ])
-            ->getForm();
+        ->add('domaine', EntityType::class, [
+            'mapped' => false,
+            'class' => Domaine::class,
+            'choice_label' => 'titre',
+            'placeholder' => 'Choisir un domaine',
+            'label' => 'Domaine : ',
+            'required' => false,
+            'data' => $domaine ? $domaineRepo->find($domaine) : null,
+            'attr' => [
+                'class' => 'mb-3 xl:w-96'
+            ]
+        ])
+        ->add('niveau', EntityType::class, [
+            'mapped' => false,
+            'class' => Niveau::class,
+            'choice_label' => 'titre',
+            'placeholder' => 'Choisir un niveau',
+            'label' => 'Niveau : ',
+            'required' => false,
+            'data' => $niveau ? $niveauRepo->find($niveau) : null,
+            'attr' => [
+                'class' => 'mb-3 xl:w-96'
+            ]
+        ])
+        ->add('type', EntityType::class, [
+            'mapped' => false,
+            'class' => TypeFormation::class,
+            'choice_label' => 'titre',
+            'placeholder' => 'Choisir un type de formation',
+            'label' => 'Type : ',
+            'required' => false,
+            'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null,
+            'attr' => [
+                'class' => 'mb-3 xl:w-96'
+            ]
+        ])
+        ->getForm();
+    
 
         $form->handleRequest($request);
 
