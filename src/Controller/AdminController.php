@@ -25,7 +25,7 @@ class AdminController extends AbstractController
     
 
         foreach ($routes as $route) {
-            echo $route->compile() . ': ' . $route->getPath() . '<br>';
+            echo $route->getPath() . '<br>';
         }
         return $this->render('admin/dashboard.html.twig', [
             'controller_name' => 'AdminController',
