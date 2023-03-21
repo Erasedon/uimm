@@ -33,11 +33,11 @@ class FormationController extends AbstractController
             'class' => Domaine::class,
             'choice_label' => 'titre',
             'placeholder' => 'Choisir un domaine',
-            'label' => 'Domaine : ',
+            'label' => false,
             'required' => false,
             'data' => $domaine ? $domaineRepo->find($domaine) : null,
             'attr' => [
-                'class' => 'mb-3 xl:w-96'
+                'class' => 'xl:w-96'
             ]
         ])
         ->add('niveau', EntityType::class, [
@@ -45,11 +45,11 @@ class FormationController extends AbstractController
             'class' => Niveau::class,
             'choice_label' => 'titre',
             'placeholder' => 'Choisir un niveau',
-            'label' => 'Niveau : ',
+            'label' => false,
             'required' => false,
             'data' => $niveau ? $niveauRepo->find($niveau) : null,
             'attr' => [
-                'class' => 'mb-3 xl:w-96'
+                'class' => 'xl:w-96'
             ]
         ])
         ->add('type', EntityType::class, [
@@ -57,11 +57,11 @@ class FormationController extends AbstractController
             'class' => TypeFormation::class,
             'choice_label' => 'titre',
             'placeholder' => 'Choisir un type de formation',
-            'label' => 'Type : ',
+            'label' => false,
             'required' => false,
             'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null,
             'attr' => [
-                'class' => 'mb-3 xl:w-96'
+                'class' => 'xl:w-96'
             ]
         ])
         ->getForm();

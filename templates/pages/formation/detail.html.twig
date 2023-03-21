@@ -17,7 +17,7 @@
     {% include('partials/_navbar.html.twig') %}
 
     {# cadre ensemble de ma page border-2 border-[black] #}
-    <div class=" w-11/12 mx-auto mt-4 p-2  mb-5 pb-10"> 
+    <div class="border-white border-[1px] border-t-[black] w-12/12 mx-auto p-2 "> 
 
         {# ici j'ai un cadre qui regroupe la photo et la description #}
         <div class="flex flex-row mt-6">
@@ -25,7 +25,7 @@
                 {#  ici j'ai mon cadre photo #}
                 <div class="w-[40%] p-1 h-[500px]">
 
-                    <div class="w-[536px] h-[349px] z-20 mx-auto border-l-8 border-primary-600"><img src="{{ asset(formation.image) }}" alt="picture"></div>
+                    <div class="w-[536px] h-[349px] z-20 mx-auto border-l-8 border-primary-600"><img src="{{ asset('build/images/' ~ formation.image) }}" alt="picture"></div>
 
                 </div>
 
