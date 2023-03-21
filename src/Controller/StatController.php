@@ -181,7 +181,7 @@ class StatController extends AbstractController
 
         $chart5->setOptions([
             'scales' => [
-                'y' => ['suggestedMin' => 0,            'suggestedMax' => 20,],
+                'y' => ['suggestedMin' => 0,            'suggestedMax' => 100,],
             ],
         ]);
 
