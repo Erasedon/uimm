@@ -67,15 +67,7 @@
 	   <div class="bas_formation mb-8 mt-16">
 {% include 'slider/index.html.twig' with {'domaines': domaines} %}
 </div>
-		<div class="statistique_container">
-			<div class="stat"></div>
-			<div class="stat"></div>
-			<div class="stat"></div>
-			<div class="stat"></div>
-			<div class="stat"></div>
-			<div class="stat"></div>
-		</div>
-
+		{% include('stat/index.html.twig') %}
 		
 		<div class="include_nous">{% include('qui_sommes_nous/index.html.twig') %}</div>
 		
