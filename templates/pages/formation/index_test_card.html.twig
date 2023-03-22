@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UIMM - Nos formations{% endblock %}
+
+{% block body %}
+{% include('partials/_navbar.html.twig') %}
+
+
+<h1 class="ml-1 text-center text-5xl font-semibold mb-10 pt-10 border-white border-[1px] border-t-[black]">Nos formations</h1>
+{% for message in app.flashes('success') %}
+	<div style="color:green; font-weight:bold">{{ message }}</div>
+{% endfor %}
+
+{{ form_start(form)}}
+<div class="grid grid-cols-4 place-items-center ">
+	<div class=" px-3 items-center" data-te-input-wrapper-init>
+		{{ form_row(form.domaine) }}
+
+	</div>
+	<div class="relative px-3" data-te-input-wrapper-init>
+		{{ form_row(form.niveau) }}
+	</div>
+	<div class="relative px-3" data-te-input-wrapper-init>
+		{{ form_row(form.type) }}
+	</div>
+		<div><button class=" p-1.5 px-4 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600">
+					Filtrer
+					</button></div>
+    </div>
+	
+
+
+	{{ form_end(form)}}
+
+	<div class="relative mt-12">
+	
+    <div class="bg-cover grid grid-cols-3 gap-x-8 mb-18 ml-16 mr-16 " style="background-image:url('build/images/Wiz.jpg')">
+ 
+    {% for formation in formations %}
+
+	<div class="mb-20 images_pixieOuter__7WCuE"style="background:rgba(255, 255, 255 ,1.25);border:1px solid rgba(255, 255, 255 ,2.18);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)">
+		<div class="text-white text-xl h-24 rounded-lg pt-8 border-b-2 bg-tahiti-100 border-neutral-100 py-3 px-6 dark:border-neutral-600">
+			{{formation.titre}}
+		</div>
+		<div class="mt-14">
+			<h5 class="text-center mb-2 text-xl font-medium leading-tight text-tahiti-100 ">
+				{{formation.niveau.description}} ({{formation.niveau.titre}})
+			</h5>
+			<p class=" text-center mb-4 text-tahiti-100 text-bold-600 ">
+				Domaine :
+				{% for domaine in formation.appartenirDomaine %}
+					{{ domaine.titre }}
+				{% endfor %}
+			</p>
+			<p class="text-center mb-10 text-tahiti-100 text-neutral-600 ">
+				Type de formation :
+				{% for type in formation.effectuerTypeFormation %}
+					{{ type.titre }}
+				{% endfor %}
+			</p>
+				<a class="z-20 ... text-center p-2.5 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600 " href="{{ path('app_formation_detail', { 'id': formation.id }) }}" >
+					Voir Detail
+					</a>
+		</div>
+	</div>
+
+    {% else %}
+    Aucun résultat
+        
+    {% endfor %}
+ {# <div class="images_outer__ooDXx">
+            <div class="images_pixieOuter__7WCuE"style="background:rgba(255, 255, 255 ,0.25);border:1px solid rgba(255, 255, 255 ,0.18);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)">
+        </div>
+    </div>
+</div> #}
+</div>
+</div>
+</div>
+{% include('partials/_footer.html.twig') %}
+{% endblock %}
