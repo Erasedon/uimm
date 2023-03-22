@@ -9,9 +9,13 @@
 			<span class="[&>svg]:w-7">
 				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor" class="h-7 w-7">
 					<path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd"/>
-				</svg>
+				</svg>        
 			</span>
 		</button>
+        			{% if  app.request.attributes.get('_route') == 'app_index' %}
+				{% else %}
+				<div class="logo_uimm w-20 max-w-max mt-2 max-lg:hidden"> <img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}" /></div>
+			{% endif %}
 		<div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto" id="navbarSupportedContent1" data-te-collapse-item>
 			
 			<!-- Left links -->
