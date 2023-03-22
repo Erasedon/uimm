@@ -12,3 +12,4 @@ import './styles/slider.scss';
 // start the Stimulus application
 import './bootstrap';
 import 'tw-elements';
+
