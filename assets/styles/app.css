@@ -30,7 +30,10 @@ body {
     background-image:url('../images/uimm_centre.jpg'); 
     background-repeat: no-repeat;
 }
-
+*{
+    margin:0;
+    padding:0;
+}
 .titre_et_btn{
     width: 50%;
     height: calc(100vh - 80px);
