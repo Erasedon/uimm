@@ -5,26 +5,26 @@
 {% block body %}
     <h1>TypeFormation</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ type_formation.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ type_formation.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
-                <td>{{ type_formation.titre }}</td>
+                <th scope="col" class="px-6 py-4">Titre</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ type_formation.titre }}</td>
             </tr>
             <tr>
-                <th>Formation</th>
-                <td> {% for formation in type_formation.formations %}
+                <th scope="col" class="px-6 py-4">Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" > {% for formation in type_formation.formations %}
                         {{ formation.titre }}
                     {% endfor %}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_type_formation_index') }}">Retour vers la liste</a>
+    <a href="{{ path('app_admin_type_formation_index') }}">Retour vers la liste</a>
 
     <a href="{{ path('app_type_formation_edit', {'id': type_formation.id}) }}">Modifier</a>
 

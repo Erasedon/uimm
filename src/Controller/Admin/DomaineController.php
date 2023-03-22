@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin/domaine')]
 class DomaineController extends AbstractController
 {
-    #[Route('/', name: 'app_domaine_index', methods: ['GET'])]
+    #[Route('/', name: 'app_admin_domaine_index', methods: ['GET'])]
     public function index(DomaineRepository $domaineRepository): Response
     {
         return $this->render('admin/domaine/index.html.twig', [

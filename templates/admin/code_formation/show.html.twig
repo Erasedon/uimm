@@ -5,26 +5,26 @@
 {% block body %}
     <h1>CodeFormation</h1>
 
-    <table class="table">
+    <table class="min-w-full text-left text-sm font-light"  >
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ code_formation.id }}</td>
+                <th scope="col" class="px-6 py-4">Id</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ code_formation.id }}</td>
             </tr>
             <tr>
-                <th>Code</th>
-                <td>{{ code_formation.code }}</td>
+                <th scope="col" class="px-6 py-4">Code</th>
+                 <td class="whitespace-nowrap px-6 py-4" >{{ code_formation.code }}</td>
             </tr>
             <tr>
-                <th>Formation</th>
-                <td> {% for formation in code_formation.formations %}
+                <th scope="col" class="px-6 py-4">Formation</th>
+                 <td class="whitespace-nowrap px-6 py-4" > {% for formation in code_formation.formations %}
                         {{ formation.titre }}
                     {% endfor %}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_code_formation_index') }}">Retour vers la liste</a>
+    <a href="{{ path('app_admin_code_formation_index') }}">Retour vers la liste</a>
 
     <a href="{{ path('app_code_formation_edit', {'id': code_formation.id}) }}">Modifier</a>
 
