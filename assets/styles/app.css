@@ -321,3 +321,20 @@ html{
     border-radius: 5px;    
     padding: 5px 15px 5px 15px;
 }
+
+@keyframes glisser {
+    from { margin-top: 50px; opacity: 0;}
+    50% { margin-top: 0px; opacity: 0.5;}
+    75% { margin-top: 10px; opacity: 1;}
+    to   { transform: 0px; opacity: 1;}
+  }
+
+.animation{
+    animation-name: glisser;
+    
+}
+
+
+.test{
+    margin-left: -90%;
+}

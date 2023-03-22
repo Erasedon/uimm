@@ -4,6 +4,9 @@ module.exports = {
   './node_modules/tw-elements/dist/js/**/*.js'], 
   theme: {
     extend: {
+      backgroundImage: {
+        'test': "url('/build/images/nosformations.jpg')",
+      },
       height: {
         '128': '45rem',
         '349px': '349px',
@@ -36,6 +39,7 @@ module.exports = {
       },
       'noir' : 'black',
       '#EF6517' : 'orange',
+      '#fcb48b' : '#fcb48b',      
       '#112C50' : '#112C50' // bleu uimm
       // ...
     },
