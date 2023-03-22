@@ -12,7 +12,17 @@
 					</svg>
 				</button>
 			</div>
+			
+
+			<div class="test">
+			{% if  app.request.attributes.get('_route') == 'app_index' %}
+				{% else %}
+				<div class="logo_uimm w-20 max-w-max mt-2"> <img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}" /></div>
+			{% endif %}
+			</div>
+
 			<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+
 				<li>
 					<a class="text-sm text-gray-400 hover:text-tahiti-500" href="{{ path('app_index')}}">Accueil</a>
 				</li>
