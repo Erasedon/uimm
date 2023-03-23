@@ -24,10 +24,10 @@ body {
 .bandeau_acceuil{
     position: relative;
     width: 100%;
-    height: calc(70vh - 80px);
+    height: calc(90vh - 80px);
     border-top: 1px gray solid;
     /* background-color: gray; */
-    background-image:url('../images/uimm_centre.jpg'); 
+    background-image:url('../images/blur-acceuil.PNG'); 
     background-repeat: no-repeat;
 }
 *{
@@ -49,7 +49,7 @@ body {
 .logo_uimm img{
     position: inherit;
     max-width: max-content;
-    width: 100%;
+    width: 70%;
 }
 
 .footer_ensemble {
@@ -99,12 +99,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 63px;
+    padding: 33px;
 }
 .footer_fin{
     width: 100%;
     height: 80px;
-    background-color: black;
+    background-color:#112c50;
 }
 .statistique_container {
     width: 100%;
@@ -124,6 +124,9 @@ body {
     height: 228px;
     border: solid 1px red;
 }
+.div_logo img{
+    width: 60%;
+}
 
 
 }
@@ -135,7 +138,7 @@ body {
             height: calc(40vh - 80px);
             border-top: 1px gray solid;
             /* background-color: gray; */
-            background-image:url('../images/uimm_centre.jpg'); 
+            background-image:url('../images/blur-acceuil.PNG'); 
             background-repeat: no-repeat;
         }
     
@@ -152,7 +155,8 @@ body {
         } 
        
         .description_uimm {
-            font-size: 1.32rem; 
+            font-size: 1.32rem;
+             
         } 
 
         .titre_footer{
