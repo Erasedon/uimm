@@ -1,15 +1,20 @@
 <?php
+
 // src/Command/CreateUserCommand.php
 
 namespace App\Command;
 
-use App\Entity\User;
 use App\Service\UserService;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Notifier\NotifierInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Notifier\Recipient\Recipient;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Bundle\SecurityBundle\Security\FirewallAwareTrait;
+use Symfony\Component\Security\Http\LoginLink\LoginLinkNotification;
+use Symfony\Component\Security\Http\LoginLink\LoginLinkHandlerInterface;
 
 #[AsCommand(
     name: 'app:create-user',
@@ -19,12 +24,20 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class CreateUserCommand extends Command
 {
+    use FirewallAwareTrait;
+    protected static $defaultName = 'app:create-user';
     protected static $defaultDescription = 'Creates a new user.';
-    private $userService;
 
-    public function __construct(UserService $userService)
+    private $userService;
+    private $loginLinkHandler;
+    private $notifier;
+
+    public function __construct(UserService $userService, LoginLinkHandlerInterface $loginLinkHandler, NotifierInterface $notifier)
     {
+        
         $this->userService = $userService;
+        $this->loginLinkHandler = $loginLinkHandler;
+        $this->notifier = $notifier;
         parent::__construct();
     }
 
@@ -42,9 +55,20 @@ class CreateUserCommand extends Command
         $password = $input->getArgument('password');
         $roles = $input->getArgument('roles');
 
-        $this->userService->createUser($email, $password, $roles);
+        $user = $this->userService->createUser($email, $password, $roles);
 
-        $output->writeln('User created successfully!');
+        $loginLinkDetails = $this->loginLinkHandler->createLoginLink($user);
+
+        // create a notification based on the login link details
+        $notification = new LoginLinkNotification($loginLinkDetails,'Bienvenue aux centres de l\'UIMM!');
+        
+        // create a recipient for this user
+        $recipient = new Recipient($user->getEmail());
+
+        // send the notification to the user
+        $this->notifier->send($notification, $recipient);
+
+        $output->writeln('User created successfully and login link sent!');
 
         return Command::SUCCESS;
     }
