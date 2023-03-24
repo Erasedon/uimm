@@ -2,22 +2,17 @@
 
 namespace App\Controller;
 
-namespace App\Controller;
-
 use Symfony\UX\Chartjs\Model\Chart;
-use App\Repository\DomaineRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class IndexController extends AbstractController
+class StatController extends AbstractController
 {
-    #[Route('/', name: 'app_index')]
-    public function index(DomaineRepository $repository,
-    ChartBuilderInterface $chartBuilder ): Response
+    #[Route('/stat', name: 'app_stat')]
+    public function index(ChartBuilderInterface $chartBuilder): Response
     {
-        $domaines = $repository->findAll();
 
         $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
 
@@ -189,10 +184,10 @@ class IndexController extends AbstractController
                 'y' => ['suggestedMin' => 0,            'suggestedMax' => 100,],
             ],
         ]);
-        
-        return $this->render('pages/acceuil/index.html.twig', [
-            'controller_name' => 'IndexController',
-            'domaines' => $domaines,
+
+
+        return $this->render('stat/index.html.twig', [
+            'controller_name' => 'StatController',
             'chart' => $chart,
             'chart1' => $chart1,
             'chart2' => $chart2,
@@ -200,10 +195,5 @@ class IndexController extends AbstractController
             'chart4' => $chart4,
             'chart5' => $chart5
         ]);
-
-        
     }
-
-    
-    
 }
