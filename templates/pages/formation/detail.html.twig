@@ -59,8 +59,8 @@
 
 
                 <div class="div_gauche w-[50%] bg-primary-600/40 pt-8">
-                    <div class="div_titre w-full text-center text-[orange] font-bold text-3xl pt-8 mb-8 opensauce">Condition d'accès</div>
-                    <div class="div pl-8 text-[white] librebaskerville">
+                    <div class="div_titre w-full pl-[100px] text-[orange] font-bold text-3xl pt-8 mb-8 opensauce">Condition d'accès</div>
+                    <div class="div pl-[100px] text-[white] librebaskerville">
                         {% for form in formation.possederCondition %}
 
                             <li class="pl-1"> {{form.description}}</li>
@@ -68,8 +68,8 @@
                         {% endfor %}
                     </div>
                     <div class="mt-7" >
-                        <div class="div_titre w-full text-center text-[orange] font-bold text-3xl mb-8 opensauce">Domaine</div>
-                        <div class="div pl-8 text-[white] librebaskerville">
+                        <div class="div_titre w-full pl-[100px] text-[orange] font-bold text-3xl mb-8 opensauce">Domaine</div>
+                        <div class="div pl-[100px] text-[white] librebaskerville">
                             {% for form in formation.appartenirDomaine %}
 
                                 {{form.titre}}<br>
@@ -79,11 +79,11 @@
                     </div>
                 </div>
                 <div class="div_droite w-[50%] bg-primary-600/40 pt-8">
-                    <div class="div_titre w-full text-center text-[orange] font-bold text-3xl pt-8 mb-8 opensauce">Lieu</div>
-                        <div class="div pl-8 text-[white] librebaskerville">
+                    <div class="div_titre w-full pl-[100px] text-[orange] font-bold text-3xl pt-8 opensauce">Lieu</div>
+                        <div class="div pl-[100px] text-[white] librebaskerville">
                             {% for form in formation.situer %}
 
-                                <div class="w-[60%] mx-auto mb-8">{{form.description|nl2br}}</div>
+                                <div class="w-[60%] mt-12">{{form.description|nl2br}}</div>
                             
                             {% endfor %}
                         </div>
