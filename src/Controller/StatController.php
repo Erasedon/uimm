@@ -22,14 +22,14 @@ class StatController extends AbstractController
                 [
                     'label' => 'Reussite',
                     'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
-                    'barPercentage' => '0.4',
+                    'barPercentage' => '0.35',
 
                     'data' => [90],
                 ],
                 [
                     'label' => 'Echec',
                     'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
-                    'barPercentage' => '0.4',
+                    'barPercentage' => '0.35',
                     
                     'data' => [10],
                 ],
@@ -59,7 +59,7 @@ class StatController extends AbstractController
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [80, 20],
-                    'barPercentage' => '0.4',
+                    'barPercentage' => '0.35',
                 ],
             ],
         ]);
@@ -87,7 +87,7 @@ class StatController extends AbstractController
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [50, 50],
-                    'barPercentage' => '0.4',
+                    'barPercentage' => '0.35',
                 ],
             ],
         ]);
@@ -115,7 +115,7 @@ class StatController extends AbstractController
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [100, 0],
-                    'barPercentage' => '0.4',
+                    'barPercentage' => '0.35',
                 ],
             ],
         ]);
@@ -143,7 +143,7 @@ class StatController extends AbstractController
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [75, 25],
-                    'barPercentage' => '0.4',
+                    'barPercentage' => '0.35',
                 ],
             ],
         ]);
