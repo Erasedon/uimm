@@ -17,17 +17,21 @@ class StatController extends AbstractController
         $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['Développeur web'],
             'datasets' => [
                 [
-                    'label' => 'Développeur web et mobile',
-                    'backgroundColor' => [
+                    'label' => 'Reussite',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'barPercentage' => '0.4',
 
-                        '#0080FF',
-                        '#FF0000'
-                    ],
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [90, 10],
+                    'data' => [90],
+                ],
+                [
+                    'label' => 'Echec',
+                    'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
+                    'barPercentage' => '0.4',
+                    
+                    'data' => [10],
                 ],
             ],
         ]);
@@ -50,11 +54,12 @@ class StatController extends AbstractController
                     'label' => 'CDA',
                     'backgroundColor' => [
 
-                        '#0080FF',
-                        '#FF0000'
+                        'rgba(0, 128, 255, 0.7)',
+                        'rgba(255, 99, 132, 0.7)'
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [80, 20],
+                    'barPercentage' => '0.4',
                 ],
             ],
         ]);
@@ -77,11 +82,12 @@ class StatController extends AbstractController
                     'label' => 'UI Designer',
                     'backgroundColor' => [
 
-                        '#0080FF',
-                        '#FF0000'
+                        'rgba(0, 128, 255, 0.7)',
+                        'rgba(255, 99, 132, 0.7)'
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [50, 50],
+                    'barPercentage' => '0.4',
                 ],
             ],
         ]);
@@ -104,11 +110,12 @@ class StatController extends AbstractController
                     'label' => 'TSSR',
                     'backgroundColor' => [
 
-                        '#0080FF',
-                        '#FF0000'
+                        'rgba(0, 128, 255, 0.7)',
+                        'rgba(255, 99, 132, 0.7)'
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [100, 0],
+                    'barPercentage' => '0.4',
                 ],
             ],
         ]);
@@ -131,11 +138,12 @@ class StatController extends AbstractController
                     'label' => 'WIS',
                     'backgroundColor' => [
 
-                        '#0080FF',
-                        '#FF0000'
+                        'rgba(0, 128, 255, 0.7)',
+                        'rgba(255, 99, 132, 0.7)'
                     ],
                     'borderColor' => 'rgb(255, 99, 132)',
                     'data' => [75, 25],
+                    'barPercentage' => '0.4',
                 ],
             ],
         ]);
@@ -151,16 +159,16 @@ class StatController extends AbstractController
 
         $chartData = [
             [
-                'label' => 'Développeur web et mobile (en %)',        'backgroundColor' => ['#0080FF', '#0080FF'],
+                'label' => 'Développeur web et mobile (en %)',        'backgroundColor' => ['rgba(0, 128, 255, 0.7)', 'rgba(0, 128, 255, 0.7)'],
                 'data' => [95, 5],
             ],
             [
-                'label' => 'CDA  (en %)',        'backgroundColor' => ['#FF0000', '#FF0000'],
+                'label' => 'CDA  (en %)',        'backgroundColor' => ['rgba(255, 99, 132, 0.7)', 'rgba(255, 99, 132, 0.7)'],
                 'data' => [87, 13],
             ],
             [
                 'label' => 'UI Designer (en %)',        'backgroundColor' => ['#112c50', '#112c50'],
-                'data' => [100, 0],
+                'data' => [100, 0], 
             ],
             [
                 'label' => 'TSSR (en %)',        'backgroundColor' => ['#ef6602', '#ef6602'],
