@@ -15,29 +15,27 @@
     <div class="w-full bg-[#EBECF0] pt-8 pb-14">
         <div class=" bg-[#E8E8E8] w-7/12 premier_div_detail_formation mx-auto">
             <div class="hauteur_detail_formation  mx-auto flex flex-row justify-around py-14">
-                <div class="div123">
-                    <div class="taille_image">
+                <div class="div123 border-0 border[black]">
+                    <div class="taille_image ml-16">
                         <img src="{{ asset('build/images/' ~ formation.image) }}" alt="picture" class="ombre_photo bg-center">
                     </div>
                 </div>
-                <div class="cadre_droit w-[50%] flex flex-col justify-center">
-                
-                <div class="div_titre font-extrabold text-2xl">{{formation.titre}}</div>
-                <div class="div_niv my-14 text-[orange] font-bold">{{formation.niveau.titre}} ({{formation.niveau.description}})</div>
-                <div class="div_description my-14">{{formation.description}}</div>
-                <div class="div_description">
-                    <a href="#detail" type="button" class="plusinfo inline-block rounded bg-info px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]">
-                        Plus d'informations
-                    </a>
-                </div>
-                
+                <div class="cadre_droit w-[40%] flex flex-col justify-center h-[600px] mt-14 pl-8">                
+                    <div class="div_titre font-extrabold text-2xl opensauce">{{formation.titre}}</div>
+                    <div class="div_niv text-[orange] font-bold my-8 librebaskerville">{{formation.niveau.titre}} ({{formation.niveau.description}})</div>
+                    <div class="div_description my-8 pr-4 librebaskerville">{{formation.description}}</div>
+                    <div class="div_description">
+                        <a href="#detail" type="button" class="librebaskerville plusinfo inline-block rounded bg-[#112c50] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-[#112c50] hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]">
+                            Plus d'informations
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="div_deux flex flex-row justify-center min-h-[250px] mt-20" id="detail">
                 <div class="div_gauche w-[50%]">
-                    <div class="titre text-center text-[orange] font-bold text-3xl">Métiers visés</div>
-                    <div class="detail pl-8 pt-10">          
+                    <div class="titre pl-[100px] text-[orange] font-bold text-3xl opensauce">Métiers visés</div>
+                    <div class="detail pl-[100px] pt-10 librebaskerville">          
                         {% for form in formation.viserMetier %}
 
                             <li class="pl-1"> {{form.titre}} : {{form.description}}</li>
@@ -45,9 +43,9 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="div_droite w-[50%]">
-                    <div class="titre text-center text-[orange] font-bold text-3xl">Candidater</div>
-                    <div class="detail pl-8 pt-10">
+                <div class="div_droite w-[50%]"> 
+                    <div class="titre pl-[100px] text-[orange] font-bold text-3xl opensauce">Candidater</div>
+                    <div class="detail pl-[100px] pt-10 librebaskerville">
                         Je candidate
                     </div>
                 </div>
@@ -57,12 +55,12 @@
         {% set test = formation.appartenirDomaine[0].image %}
 
             {# <div class="w-full mt-16 flex flex-row bg-cover" style="background-image:url('{{ test }}')">  #}
-            <div class="w-full mt-16 flex flex-row bg-cover bg-center min-h-[450px] " style="background-image:url({{ asset(test) }})">
+            <div class="w-full mt-16 flex flex-row bg-cover bg-center h-[600px] " style="background-image:url({{ asset(test) }})">
 
 
-                <div class="div_gauche w-[50%] bg-primary-600/40">
-                    <div class="div_titre w-full text-center text-[orange] font-bold text-3xl pt-8 mb-4">Condition d'accès</div>
-                    <div class="div pl-8 text-[white]">
+                <div class="div_gauche w-[50%] bg-primary-600/40 pt-8">
+                    <div class="div_titre w-full pl-[100px] text-[orange] font-bold text-3xl pt-8 mb-8 opensauce">Condition d'accès</div>
+                    <div class="div pl-[100px] text-[white] librebaskerville">
                         {% for form in formation.possederCondition %}
 
                             <li class="pl-1"> {{form.description}}</li>
@@ -70,8 +68,8 @@
                         {% endfor %}
                     </div>
                     <div class="mt-7" >
-                        <div class="div_titre w-full text-center text-[orange] font-bold text-3xl mb-4">Domaine</div>
-                        <div class="div pl-8 text-[white]">
+                        <div class="div_titre w-full pl-[100px] text-[orange] font-bold text-3xl mb-8 opensauce">Domaine</div>
+                        <div class="div pl-[100px] text-[white] librebaskerville">
                             {% for form in formation.appartenirDomaine %}
 
                                 {{form.titre}}<br>
@@ -80,12 +78,12 @@
                     </div>
                     </div>
                 </div>
-                <div class="div_droite w-[50%] bg-primary-600/40">
-                    <div class="div_titre w-full text-center text-[orange] font-bold text-3xl pt-8 mb-4">Lieu</div>
-                        <div class="div pl-8 text-[white]">
+                <div class="div_droite w-[50%] bg-primary-600/40 pt-8">
+                    <div class="div_titre w-full pl-[100px] text-[orange] font-bold text-3xl pt-8 opensauce">Lieu</div>
+                        <div class="div pl-[100px] text-[white] librebaskerville">
                             {% for form in formation.situer %}
 
-                                <div class="w-[60%] mx-auto mb-8">{{form.description|nl2br}}</div>
+                                <div class="w-[60%] mt-12">{{form.description|nl2br}}</div>
                             
                             {% endfor %}
                         </div>

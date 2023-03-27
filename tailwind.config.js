@@ -12,11 +12,16 @@ module.exports = {
         '350px': '350px',        
         '349px': '349px',
         '354px': '354px',
+        '600px': '600px',
         '500px': '500px',
+        '600px': '600px',
       },
       minHeight: {
         '300px': '300px',
         '450px': '450px',
+      },
+      spacing: {
+        '100px': '100px',
       },
       width: {
         '10%': '10%',
