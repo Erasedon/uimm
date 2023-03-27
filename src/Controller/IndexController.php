@@ -25,16 +25,21 @@ class IndexController extends AbstractController
             'labels' => ['Développeur web'],
             'datasets' => [
                 [
-                    'label' => 'Reussite',
+                    'label' => 'Reussite (en %)',
                     'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
-                    'barPercentage' => '0.4',
-
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
                     'data' => [90],
                 ],
                 [
-                    'label' => 'Echec',
+                    'label' => 'Echec (en %)',
                     'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
-                    'barPercentage' => '0.4',
+                    'borderColor' => 'rgb(255, 99, 132)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
                     
                     'data' => [10],
                 ],
@@ -48,24 +53,37 @@ class IndexController extends AbstractController
                     'suggestedMax' => 100,
                 ],
             ],
+
+                    'gridLines' => [
+                        'display' => false, // Supprimer le grillage de fond
+                    ],
         ]);
 
         $chart1 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart1->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['CDA'],
             'datasets' => [
                 [
-                    'label' => 'CDA',
-                    'backgroundColor' => [
-
-                        'rgba(0, 128, 255, 0.7)',
-                        'rgba(255, 99, 132, 0.7)'
-                    ],
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [80, 20],
-                    'barPercentage' => '0.4',
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [80],
                 ],
+
+                    [
+                        'label' => 'Echec (en %)',
+                        'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
+                        'borderColor' => 'rgb(255, 99, 132)',
+                        'borderWidth' => '2',
+                        'barPercentage' => '1',
+                        'categoryPercentage' => '0.3',
+                        'data' => [20],
+                    
+                    ],
             ],
         ]);
 
@@ -81,18 +99,26 @@ class IndexController extends AbstractController
         $chart2 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart2->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['UI Designer'],
             'datasets' => [
                 [
-                    'label' => 'UI Designer',
-                    'backgroundColor' => [
-
-                        'rgba(0, 128, 255, 0.7)',
-                        'rgba(255, 99, 132, 0.7)'
-                    ],
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [50],
+                ],
+                [
+                    'label' => 'Echec (en %)',
+                    'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
                     'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [50, 50],
-                    'barPercentage' => '0.4',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [50],
+                
                 ],
             ],
         ]);
@@ -109,18 +135,27 @@ class IndexController extends AbstractController
         $chart3 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart3->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['TSSR'],
             'datasets' => [
                 [
-                    'label' => 'TSSR',
-                    'backgroundColor' => [
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [100],
 
-                        'rgba(0, 128, 255, 0.7)',
-                        'rgba(255, 99, 132, 0.7)'
-                    ],
+                ],
+                [
+                    'label' => 'Echec (en %)',
+                    'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
                     'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [100, 0],
-                    'barPercentage' => '0.4',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [0],
+                
                 ],
             ],
         ]);
@@ -137,18 +172,27 @@ class IndexController extends AbstractController
         $chart4 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart4->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['WIS'],
             'datasets' => [
                 [
-                    'label' => 'WIS',
-                    'backgroundColor' => [
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [75],
 
-                        'rgba(0, 128, 255, 0.7)',
-                        'rgba(255, 99, 132, 0.7)'
-                    ],
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [75, 25],
-                    'barPercentage' => '0.4',
+                ],
+
+                [
+                'label' => 'Echec (en %)',
+                'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
+                'borderColor' => 'rgb(255, 99, 132)',
+                'borderWidth' => '2',
+                'barPercentage' => '1',
+                'categoryPercentage' => '0.3',
+                'data' => [25]
                 ],
             ],
         ]);
@@ -162,41 +206,6 @@ class IndexController extends AbstractController
             ],
         ]);
 
-        $chartData = [
-            [
-                'label' => 'Développeur web et mobile (en %)',        'backgroundColor' => ['rgba(0, 128, 255, 0.7)', 'rgba(0, 128, 255, 0.7)'],
-                'data' => [95, 5],
-            ],
-            [
-                'label' => 'CDA  (en %)',        'backgroundColor' => ['rgba(255, 99, 132, 0.7)', 'rgba(255, 99, 132, 0.7)'],
-                'data' => [87, 13],
-            ],
-            [
-                'label' => 'UI Designer (en %)',        'backgroundColor' => ['#112c50', '#112c50'],
-                'data' => [100, 0], 
-            ],
-            [
-                'label' => 'TSSR (en %)',        'backgroundColor' => ['#ef6602', '#ef6602'],
-                'data' => [73, 27],
-            ],
-            [
-                'label' => 'WIS (en %)',        'backgroundColor' => ['#000000', '#000000'],
-                'data' => [100, 0],
-            ],
-        ];
-
-        $chart5 = $chartBuilder->createChart(Chart::TYPE_BAR);
-
-        $chart5->setData([
-            'labels' => ['Reussite', 'Echec'],
-            'datasets' => $chartData,
-        ]);
-
-        $chart5->setOptions([
-            'scales' => [
-                'y' => ['suggestedMin' => 0,            'suggestedMax' => 100,],
-            ],
-        ]);
 
         
         return $this->render('pages/acceuil/index.html.twig', [
@@ -207,7 +216,7 @@ class IndexController extends AbstractController
             'chart2' => $chart2,
             'chart3' => $chart3,
             'chart4' => $chart4,
-            'chart5' => $chart5
+
         ]);
 
         
