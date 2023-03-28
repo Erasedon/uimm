@@ -51,12 +51,16 @@ class IndexController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
-            ],
-
-                    'gridLines' => [
-                        'display' => false, // Supprimer le grillage de fond
+                'x' => [
+                    'grid' => [
+                        'display' => false
                     ],
+                ]
+            ],
         ]);
 
         $chart1 = $chartBuilder->createChart(Chart::TYPE_BAR);
@@ -92,7 +96,15 @@ class IndexController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
 
@@ -128,7 +140,15 @@ class IndexController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
 
@@ -165,7 +185,15 @@ class IndexController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
 
@@ -202,10 +230,17 @@ class IndexController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
-
 
         
         return $this->render('pages/acceuil/index.html.twig', [
