@@ -48,7 +48,7 @@ style="background-image:url('build/images/nosformations.jpg')">
 
 	{% set duree = duree + 0.50 %}
  
-	<div class= "mt-14 mr-3 h-96 mb-20 rounded-lg bg-tahiti-200 text-center text-white shadow-lg animation" style="animation-duration:{{duree}}s"><a href="{{ path('app_formation_detail', { 'id': formation.id }) }}">
+	<div class= "mr-3 h-96 mb-20 rounded-lg bg-tahiti-200 text-center text-white shadow-lg animation" style="animation-duration:{{duree}}s"><a href="{{ path('app_formation_detail', { 'id': formation.id }) }}">
 		<div class="text-xl h-24 rounded-lg flex items-center justify-center border-b-2 bg-tahiti-100 border-neutral-100 py-3 px-6 dark:border-neutral-600">
 			{{formation.titre}}
 		</div>
