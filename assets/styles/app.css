@@ -474,7 +474,7 @@ html{
 
 
 .imagetaille{
-    /* border: 1px solid red; */
+    border-radius:2%;
 }
 
 .imagetaille img{
