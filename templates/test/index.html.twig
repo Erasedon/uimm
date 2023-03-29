@@ -3,20 +3,71 @@
 {% block title %}Hello TestController!{% endblock %}
 
 {% block body %}
+<nav class="flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-4 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start" data-te-navbar-ref>
+	<div class="flex w-full flex-wrap items-center justify-between px-6">
+		<button class="block border-0 bg-transparent py-2 px-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden" type="button" data-te-collapse-init data-te-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="[&>svg]:w-7">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+					<path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd"/>
+				</svg>        
+			</span>
+		</button>
+        			{% if  app.request.attributes.get('_route') == 'app_index' %}
+				{% else %}
+				<div class="logo_uimm w-20 max-w-max mt-2 max-lg:hidden"> <img src="{{ asset('build/images/UIMM-Region-ChampagneArdenne-Rvb-1024x950.png')}}" /></div>
+			{% endif %}
+		<div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto" id="navbarSupportedContent1" data-te-collapse-item>
+			
+			<!-- Left links -->
+			<ul class="lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6" data-te-navbar-nav-ref>
+			<li class="mb-1">
+<li>
+					<a class="text-sm text-gray-400 hover:text-tahiti-500" href="{{ path('app_index')}}">Accueil</a>
+				</li>
+				<li class="text-gray-300 max-lg:hidden">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewbox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+					</svg>
+				</li>
+				{#<li><a class="text-sm text-blue-600 font-bold" href="#">About Us</a></li>
+							<li class="text-gray-300">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+								</svg>
+							</li> #}
+				
+				<li>
+					<a class="text-sm text-gray-400 hover:text-tahiti-500" href="#">Contact</a>
+				</li>
+				<li class="text-gray-300 max-lg:hidden">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewbox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+					</svg>
+				</li>
+				<li>
+					<a class="text-sm text-gray-400 hover:text-tahiti-500" href="{{ path('app_formation')}}">Formation</a>
+				</li>
+			</ul>
+			<!-- Left links -->
+		</div>
+		<!-- Collapsible wrapper -->
 
+		<!-- Right elements -->
+		<div class="relative flex items-center">
+			<div class="recherche">
+				<!-- component -->
+				<!-- This is an example component -->
+					<div class="pt-2 relative mx-auto text-gray-600"> <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Rechercher ...">
+					<button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+						<svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewbox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+							<path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+						</svg>
+					</button>
+				</div>
+				<!-- Right elements -->
+			</div>
 
+		</nav>
 
-<a href="{{ path('app_formation') }}">Formations</a>
-
-<h1>Page de test</h1>
-
-{{ form_start(form) }}
-
-{{ form_row(form.nom, {'attr' : {'placeholder' : 'ex : John'}} ) }}
-{{ form_row(form.email, {'attr' : {'placeholder' : 'ex : John@exemple.fr'}}) }}
-{{ form_row(form.message, {'attr' : {'placeholder' : 'ex : Bonjour tout le monde'}}) }}
-
-<button type="submit"> Envoyer ! </button>
-{{ form_end(form) }}
 
 {% endblock %}
