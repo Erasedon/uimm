@@ -17,17 +17,26 @@ class StatController extends AbstractController
         $chart = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['Développeur web'],
             'datasets' => [
                 [
-                    'label' => 'Développeur web et mobile',
-                    'backgroundColor' => [
-
-                        '#0080FF',
-                        '#FF0000'
-                    ],
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [90],
+                ],
+                [
+                    'label' => 'Echec (en %)',
+                    'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
                     'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [90, 10],
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    
+                    'data' => [10],
                 ],
             ],
         ]);
@@ -37,25 +46,43 @@ class StatController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ],
+                ]
             ],
         ]);
 
         $chart1 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart1->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['CDA'],
             'datasets' => [
                 [
-                    'label' => 'CDA',
-                    'backgroundColor' => [
-
-                        '#0080FF',
-                        '#FF0000'
-                    ],
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [80, 20],
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [80],
                 ],
+
+                    [
+                        'label' => 'Echec (en %)',
+                        'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
+                        'borderColor' => 'rgb(255, 99, 132)',
+                        'borderWidth' => '2',
+                        'barPercentage' => '1',
+                        'categoryPercentage' => '0.3',
+                        'data' => [20],
+                    
+                    ],
             ],
         ]);
 
@@ -64,24 +91,41 @@ class StatController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
 
         $chart2 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart2->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['UI Designer'],
             'datasets' => [
                 [
-                    'label' => 'UI Designer',
-                    'backgroundColor' => [
-
-                        '#0080FF',
-                        '#FF0000'
-                    ],
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [50],
+                ],
+                [
+                    'label' => 'Echec (en %)',
+                    'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
                     'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [50, 50],
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [50],
+                
                 ],
             ],
         ]);
@@ -91,24 +135,42 @@ class StatController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
 
         $chart3 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart3->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['TSSR'],
             'datasets' => [
                 [
-                    'label' => 'TSSR',
-                    'backgroundColor' => [
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [100],
 
-                        '#0080FF',
-                        '#FF0000'
-                    ],
+                ],
+                [
+                    'label' => 'Echec (en %)',
+                    'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
                     'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [100, 0],
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [0],
+                
                 ],
             ],
         ]);
@@ -118,24 +180,42 @@ class StatController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
 
         $chart4 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart4->setData([
-            'labels' => ['Reussite', 'Echec'],
+            'labels' => ['WIS'],
             'datasets' => [
                 [
-                    'label' => 'WIS',
-                    'backgroundColor' => [
+                    'label' => 'Reussite (en %)',
+                    'backgroundColor' => 'rgba(0, 128, 255, 0.7)',
+                    'borderColor' => 'rgb(0, 128, 255)',
+                    'borderWidth' => '2',
+                    'barPercentage' => '1',
+                    'categoryPercentage' => '0.3',
+                    'data' => [75],
 
-                        '#0080FF',
-                        '#FF0000'
-                    ],
-                    'borderColor' => 'rgb(255, 99, 132)',
-                    'data' => [75, 25],
+                ],
+
+                [
+                'label' => 'Echec (en %)',
+                'backgroundColor' => 'rgba(255, 99, 132, 0.7)',
+                'borderColor' => 'rgb(255, 99, 132)',
+                'borderWidth' => '2',
+                'barPercentage' => '1',
+                'categoryPercentage' => '0.3',
+                'data' => [25]
                 ],
             ],
         ]);
@@ -145,43 +225,15 @@ class StatController extends AbstractController
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 100,
+                    'grid' => [
+                        'display' => false
+                    ]
                 ],
-            ],
-        ]);
-
-        $chartData = [
-            [
-                'label' => 'Développeur web et mobile (en %)',        'backgroundColor' => ['#0080FF', '#0080FF'],
-                'data' => [95, 5],
-            ],
-            [
-                'label' => 'CDA  (en %)',        'backgroundColor' => ['#FF0000', '#FF0000'],
-                'data' => [87, 13],
-            ],
-            [
-                'label' => 'UI Designer (en %)',        'backgroundColor' => ['#112c50', '#112c50'],
-                'data' => [100, 0],
-            ],
-            [
-                'label' => 'TSSR (en %)',        'backgroundColor' => ['#ef6602', '#ef6602'],
-                'data' => [73, 27],
-            ],
-            [
-                'label' => 'WIS (en %)',        'backgroundColor' => ['#000000', '#000000'],
-                'data' => [100, 0],
-            ],
-        ];
-
-        $chart5 = $chartBuilder->createChart(Chart::TYPE_BAR);
-
-        $chart5->setData([
-            'labels' => ['Reussite', 'Echec'],
-            'datasets' => $chartData,
-        ]);
-
-        $chart5->setOptions([
-            'scales' => [
-                'y' => ['suggestedMin' => 0,            'suggestedMax' => 100,],
+                'x' => [
+                    'grid' => [
+                        'display' => false
+                    ]
+                ]
             ],
         ]);
 
@@ -193,7 +245,7 @@ class StatController extends AbstractController
             'chart2' => $chart2,
             'chart3' => $chart3,
             'chart4' => $chart4,
-            'chart5' => $chart5
+
         ]);
     }
 }
