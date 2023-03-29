@@ -41,14 +41,14 @@ style="background-image:url('build/images/nosformations.jpg')">
 	<div class="relative mt-12">
 
 
-    <div class="grid grid-cols-3 gap-x-8 mb-12 ml-16 mr-16">
+    <div class="grid grid-cols-4 gap-x-8 mb-12 ml-16 mr-16">
 	{% set duree = 1 %}
 
     {% for formation in formations %}
 
 	{% set duree = duree + 0.50 %}
  
-	<div class= "mr-3 h-96 mb-20 rounded-lg bg-tahiti-200 text-center text-white shadow-lg animation" style="animation-duration:{{duree}}s">
+	<div class= "mt-14 mr-3 h-96 mb-20 rounded-lg bg-tahiti-200 text-center text-white shadow-lg animation" style="animation-duration:{{duree}}s"><a href="{{ path('app_formation_detail', { 'id': formation.id }) }}">
 		<div class="text-xl h-24 rounded-lg flex items-center justify-center border-b-2 bg-tahiti-100 border-neutral-100 py-3 px-6 dark:border-neutral-600">
 			{{formation.titre}}
 		</div>
@@ -56,22 +56,21 @@ style="background-image:url('build/images/nosformations.jpg')">
 
 		<div class="h-60">
 
-			<div class="h-1/4 flex justify-center items-center"><h5 class="text-xl font-medium leading-tight text-tahiti-100">
+			{# <div class="h-1/4 flex justify-center items-center"><h5 class="text-xl font-medium leading-tight text-tahiti-100">
 				{{formation.niveau.description}} ({{formation.niveau.titre}})
 			</h5></div>
 			<div class="h-1/4 flex justify-center items-center"><p class="text-tahiti-100 text-bold-600">
 				{% for domaine in formation.appartenirDomaine %}			
 				  {{domaine.titre }}{% if loop.last %}{% else %}, {% endif %}
 				{% endfor %}
+			</p></div> #}
+			<div class=" flex justify-center items-center"><p class="text-tahiti-100 text-neutral-600"></a>
 			</p></div>
-			<div class="h-1/4 flex justify-center items-center"><p class="text-tahiti-100 text-neutral-600">
-				{% for type in formation.effectuerTypeFormation %}
-					{{ type.titre }}
-				{% endfor %}
-			</p></div>
-				<div class="h-1/4 flex justify-center items-center"><a class="p-2.5 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600 " href="{{ path('app_formation_detail', { 'id': formation.id }) }}" >
-					Voir Detail
-					</a>
+			<div class="box-image"><a href="{{ path('app_formation_detail', { 'id': formation.id }) }}"><img src="{{asset('build/images/' ~  formation.image)}}"></a></div>
+				<div class="h-1/4 flex justify-center items-center">
+					{# <a class="p-2.5 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600 " href="{{ path('app_formation_detail', { 'id': formation.id }) }}" >
+						Voir Detail
+					</a> #}
 				</div>
 			</div>
 		</div>
