@@ -471,3 +471,13 @@ html{
     width: 100%;
     height: auto;
 }
+
+
+.imagetaille{
+    /* border: 1px solid red; */
+}
+
+.imagetaille img{
+    width: 100%;
+    height : 100%;
+}

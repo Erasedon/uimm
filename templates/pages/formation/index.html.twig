@@ -64,9 +64,16 @@ style="background-image:url('build/images/nosformations.jpg')">
 				  {{domaine.titre }}{% if loop.last %}{% else %}, {% endif %}
 				{% endfor %}
 			</p></div> #}
-			<div class=" flex justify-center items-center"><p class="text-tahiti-100 text-neutral-600"></a>
+			<div class=" flex justify-center items-center"><p class="text-tahiti-100 text-neutral-600">
 			</p></div>
-			<div class="box-image"><a href="{{ path('app_formation_detail', { 'id': formation.id }) }}"><img src="{{asset('build/images/' ~  formation.image)}}"></a></div>
+			<div class="box-image">
+			<div class="imagetaille h-[270px] bg-cover bg-center" style="background-image:url({{ asset('build/images/' ~  formation.image) }})">
+			</div>
+			</a>
+				{# <a href="{{ path('app_formation_detail', { 'id': formation.id }) }}">
+				<img src="{{asset('build/images/' ~  formation.image)}}" class="overflow-hidden h-[270px] imagetaille">
+				</a> #}
+			</div>
 				<div class="h-1/4 flex justify-center items-center">
 					{# <a class="p-2.5 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600 " href="{{ path('app_formation_detail', { 'id': formation.id }) }}" >
 						Voir Detail
