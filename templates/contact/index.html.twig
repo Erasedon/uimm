@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello ContactController!
+{% endblock %}
+
+
+{% block body %}
+	{% include('partials/_navbar.html.twig') %}
+	<div class="flex justify-center">
+		`<div class="w-50% h-auto p-3 border-tahiti-100 border-2 rounded-lg mt-20 section-title text-sm font-semibold text-tahiti-100 sm:text-sm sm:tracking-tight lg:text-5xl " style="text-align: center; ">Contactez-nous
+			<div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+				<div class="sm:col-span-3">
+					<label for="Nom" class="flex justify-start block text-sm font-medium text-gray-900">Nom</label>
+					<div class="mt-2">
+						<input type="text" name="nom" id="nom" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-tahiti-100 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-tahiti-100 sm:text-sm sm:leading-6">
+					</div>
+				</div>
+
+				<div class="sm:col-span-3">
+					<label for="Prenom" class="flex justify-start block text-sm font-medium text-gray-900">Prénom</label>
+					<div class="mt-2">
+						<input type="text" name="prenom" id="prenom" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-tahiti-100 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-tahiti-100 sm:text-sm sm:leading-6">
+					</div>
+				</div>
+				<div class="sm:col-span-3">
+					<label for="Mail" class="flex justify-start block text-sm font-medium text-gray-900">Mail</label>
+					<div class="mt-2">
+						<input type="text" name="mail" id="mail" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-tahiti-100 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-tahiti-100 sm:text-sm sm:leading-6">
+					</div>
+				</div>
+
+				<div class="sm:col-span-3">
+					<label for="Prenom" class="flex justify-start block text-sm font-medium text-gray-900">Téléphone</label>
+					<div class="mt-2">
+						<input type="text" name="telephone" id="telephone" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-tahiti-100 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-tahiti-100 sm:text-sm sm:leading-6">
+					</div>
+				</div>
+			</div>
+			<div class="col-span-full mt-10">
+				<label for="about" class="flex justify-start block text-sm font-medium leading-6 text-gray-900">About</label>
+				<div class="mt-2">
+					<textarea id="about" name="about" rows="3" class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"></textarea>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	{% include('partials/_footer.html.twig') %}
+{% endblock %}
+
+
+
+
+
