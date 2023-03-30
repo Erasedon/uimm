@@ -18,7 +18,7 @@
 			<div class="relative overflow-hidden after:clear-both after:block after:content-['']">
 				{% for key, domaine in domaines %}
 					<div class="relative float-left {% if key == 0 %}-mr-[100%]{% else %}hidden{% endif %} h-128 w-2/3 transition-transform duration-[650ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item {% if loop.first %} data-te-carousel-active {% endif %} style="backface-visibility: hidden">
-						<img src="{{ asset(domaine.image) }}" class="content-center" alt="...">
+						<img src="{{ asset('build/images/'~ domaine.image) }}" class="content-center" alt="...">
 						<div class="content-center absolute bottom-5 hidden py-5 w-full text-white md:block">
 							<h5 class="text-5xl content-center ">{{ domaine.titre }}</h5>
 							<div class="flex justify-center">
