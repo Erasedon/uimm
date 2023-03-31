@@ -28,64 +28,67 @@ class FormationController extends AbstractController
         $formations = $formationRepo->filterFormations($domaine, $niveau, $typeFormation);
 
         $form = $this->createFormBuilder()
-        ->add('domaine', EntityType::class, [
-            'mapped' => false,
-            'class' => Domaine::class,
-            'choice_label' => 'titre',
-            'placeholder' => 'Choisir un domaine',
-            'label' => false,
-            'required' => false,
-            'data' => $domaine ? $domaineRepo->find($domaine) : null,
-            'attr' => [
-                'class' => 'xl:w-96'
-            ]
-        ])
-        ->add('niveau', EntityType::class, [
-            'mapped' => false,
-            'class' => Niveau::class,
-            'choice_label' => 'titre',
-            'placeholder' => 'Choisir un niveau',
-            'label' => false,
-            'required' => false,
-            'data' => $niveau ? $niveauRepo->find($niveau) : null,
-            'attr' => [
-                'class' => 'xl:w-96'
-            ]
-        ])
-        ->add('type', EntityType::class, [
-            'mapped' => false,
-            'class' => TypeFormation::class,
-            'choice_label' => 'titre',
-            'placeholder' => 'Choisir un type de formation',
-            'label' => false,
-            'required' => false,
-            'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null,
-            'attr' => [
-                'class' => 'xl:w-96'
-            ]
-        ])
-        ->getForm();
-    
+            ->add('domaine', EntityType::class, [
+                'mapped' => false,
+                'class' => Domaine::class,
+                'choice_label' => 'titre',
+                'placeholder' => 'Choisir un domaine',
+                'label' => false,
+                'required' => false,
+                'data' => $domaine ? $domaineRepo->find($domaine) : null,
+                'attr' => [
+                    'class' => 'xl:w-96'
+                ]
+            ])
+            ->add('niveau', EntityType::class, [
+                'mapped' => false,
+                'class' => Niveau::class,
+                'choice_label' => 'titre',
+                'placeholder' => 'Choisir un niveau',
+                'label' => false,
+                'required' => false,
+                'data' => $niveau ? $niveauRepo->find($niveau) : null,
+                'attr' => [
+                    'class' => 'xl:w-96'
+                ]
+            ])
+            ->add('type', EntityType::class, [
+                'mapped' => false,
+                'class' => TypeFormation::class,
+                'choice_label' => 'titre',
+                'placeholder' => 'Choisir un type de formation',
+                'label' => false,
+                'required' => false,
+                'data' => $typeFormation ? $typeformationRepo->find($typeFormation) : null,
+                'attr' => [
+                    'class' => 'xl:w-96'
+                ]
+            ])
+            ->getForm();
+
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+
 
             $domaine = $form->get('domaine')->getData() ? $form->get('domaine')->getData() : null;
             $niveau = $form->get('niveau')->getData() ? $form->get('niveau')->getData() : null;
             $typeFormation = $form->get('type')->getData() ? $form->get('type')->getData() : null;
 
             $url = $this->generateUrl('app_formation', [
-                'domaine' => $domaine ? $domaine->getId() : "", 
-                'niveau' => $niveau ? $niveau->getId() : "", 
+                'domaine' => $domaine ? $domaine->getId() : "",
+                'niveau' => $niveau ? $niveau->getId() : "",
                 'type' => $typeFormation ? $typeFormation->getId() : ""
             ]);
 
             return $this->redirect($url);
         }
-
+        // $domaine = $domaineRepo->find($domaine);
+        // $titreDomaine = $domaine->getTitre();
         return $this->render('pages/formation/index.html.twig', [
             'formations' => $formations,
+            // 'titreDomaine' => $titreDomaine,
             'form' => $form->createView()
         ]);
     }
@@ -95,10 +98,9 @@ class FormationController extends AbstractController
     {
 
         $formation = $formationRepo->find($id);
-        
+
         return $this->render('pages/formation/detail.html.twig', [
             'formation' => $formation
         ]);
-
     }
 }

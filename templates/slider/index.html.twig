@@ -22,9 +22,9 @@
 						<div class="content-center absolute bottom-5 hidden py-5 w-full text-white md:block">
 							<h5 class="text-5xl content-center ">{{ domaine.titre }}</h5>
 							<div class="flex justify-center">
-								<button type="button" class=" mt-4 p-2 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600 ">
+								<a href="{{ path('app_formation', { 'domaine': domaine.id }) }}"><button type="button"  class=" mt-4 p-2 bg-tahiti-100 font-semibold rounded-lg shadow-md text-white hover:bg-white hover:text-tahiti-500 focus:outline-none focus:ring-2 focus:ring-black-400 focus:ring-opacity-75 bg-tahiti-100 text-tahiti-600 ">
 									Infos
-								</button>
+								</button></a>
 							</div>
 						</div>
 					</div>
